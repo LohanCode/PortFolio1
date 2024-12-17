@@ -5,6 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio BTS SIO - Documentation</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles pour les onglets */
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            border: 1px solid transparent;
+            border-radius: 5px 5px 0 0;
+            transition: background 0.3s;
+        }
+
+        .tab:hover {
+            background: #f0f0f0;
+        }
+
+        .tab.active {
+            border: 1px solid #ccc;
+            border-bottom: 2px solid white;
+            background: #fff;
+            font-weight: bold;
+        }
+
+        /* Styles pour les sections */
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        /* Styles pour les sous-onglets */
+        .sub-tabs {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .sub-tab {
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #555;
+            border: 1px solid #ddd;
+            margin-right: 5px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .sub-tab:hover {
+            background: #e0e0e0;
+        }
+
+        .sub-tab.active {
+            background: #ccc;
+            font-weight: bold;
+        }
+
+        .sub-content-section {
+            display: none;
+        }
+
+        .sub-content-section.active {
+            display: block;
+        }
+
+        /* Styles pour les fichiers PDF */
+        .pdf-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .pdf-list li {
+            margin: 10px 0;
+        }
+
+        .pdf-list a {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        .pdf-list a:hover {
+            color: darkblue;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -18,9 +107,99 @@
             </ul>
         </nav>
     </header>
+
     <main>
+        <section>
+            <h2>Documentation</h2>
+
+            <!-- Onglets principaux -->
+            <div class="tabs">
+                <a href="#reseau" class="tab active" onclick="showTab(event, 'reseau')">Réseau</a>
+                <a href="#developpement" class="tab" onclick="showTab(event, 'developpement')">Développement</a>
+                <a href="#securite" class="tab" onclick="showTab(event, 'securite')">CyberSécurité</a>
+                <a href="#stage" class="tab" onclick="showTab(event, 'stage')">Stage</a>
+            </div>
+
+            <!-- Contenu des sections -->
+            <div id="reseau" class="content-section active">
+                <h3>Documentation Réseau</h3>
+                <ul class="pdf-list">
+                    <li><a href="Exolab_Decouverte_RoutageCisco_1.pdf" target="_blank">Découverte Routage Cisco</a></li>
+                </ul>
+            </div>
+
+            <div id="developpement" class="content-section">
+                <h3>Documentation Développement</h3>
+                
+                <!-- Sous-onglets pour Développement -->
+                <div class="sub-tabs">
+                    <a href="#base-donnees" class="sub-tab active" onclick="showSubTab(event, 'base-donnees')">Base de données</a>
+                    <a href="#javascript" class="sub-tab" onclick="showSubTab(event, 'javascript')">JavaScript</a>
+                </div>
+
+                <!-- Contenu des sous-onglets -->
+                <div id="base-donnees" class="sub-content-section active">
+                    <h4>Base de données</h4>
+                    <ul class="pdf-list">
+                        <li><a href="Tutoriel_LohanPoulain.pdf" target="_blank">Tutoriel pour accéder à PHPMyAdmin</a></li>
+                        <li><a href="" target="_blank"></a></li>
+                    </ul>
+                </div>
+
+                <div id="javascript" class="sub-content-section">
+                    <h4>JavaScript</h4>
+                    <ul class="pdf-list">
+                        <li><a href="" target="_blank"></a></li>
+                        <li><a href="" target="_blank"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="securite" class="content-section">
+                <h3>Documentation CyberSécurité</h3>
+                <ul class="pdf-list">
+                    <li><a href="TP_Gestion_des_Comptes_Utilisateurs_et_Sécurité_des_Services.pdf" target="_blank">Gestion des comptes utilisateurs et sécurité</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="stage" class="content-section">
+            <h3>Stage</h3>
+            <ul class="pdf-list">
+                <li><a href="avenant_convention_stage.pdf" target="_blank">Avenant à la convention de stage</a></li>
+            </ul>
+        </div>
+        </section>
+    </main>
+
     <footer>
-        <p>© 2024 Lohan Poulain</p>
+        <p>© 2024 Lohan Poulain - BTS SIO</p>
     </footer>
+
+    <!-- Script pour les onglets -->
+    <script>
+        function showTab(event, sectionId) {
+            event.preventDefault();
+
+            // Désactiver tous les onglets et sections
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+
+            // Activer l'onglet cliqué
+            event.target.classList.add('active');
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function showSubTab(event, subSectionId) {
+            event.preventDefault();
+
+            // Désactiver tous les sous-onglets et sous-sections
+            document.querySelectorAll('.sub-tab').forEach(subTab => subTab.classList.remove('active'));
+            document.querySelectorAll('.sub-content-section').forEach(subSection => subSection.classList.remove('active'));
+
+            // Activer le sous-onglet cliqué
+            event.target.classList.add('active');
+            document.getElementById(subSectionId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
