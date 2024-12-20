@@ -4,36 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio BTS SIO - Documentation</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Styles pour les onglets */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e2f;
+            color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header, footer {
+            background-color: #14142b;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #00e0ff;
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
         .tabs {
             display: flex;
-            border-bottom: 2px solid #ccc;
             margin-bottom: 20px;
+            border-bottom: 2px solid #ccc;
         }
 
         .tab {
-            padding: 10px 20px;
+            padding: 10px 15px;
+            cursor: pointer;
             text-decoration: none;
-            color: #333;
-            border: 1px solid transparent;
-            border-radius: 5px 5px 0 0;
+            color: #f4f4f4;
             transition: background 0.3s;
         }
 
         .tab:hover {
-            background: #f0f0f0;
+            background: #2a2a56;
         }
 
         .tab.active {
-            border: 1px solid #ccc;
-            border-bottom: 2px solid white;
-            background: #fff;
+            background: #2a2a56;
             font-weight: bold;
+            border-bottom: 2px solid #1e1e2f;
         }
 
-        /* Styles pour les sections */
         .content-section {
             display: none;
         }
@@ -42,28 +89,27 @@
             display: block;
         }
 
-        /* Styles pour les sous-onglets */
         .sub-tabs {
             display: flex;
-            margin-top: 10px;
+            margin: 10px 0;
+            border-bottom: 1px solid #ccc;
         }
 
         .sub-tab {
             padding: 5px 10px;
+            cursor: pointer;
             text-decoration: none;
-            color: #555;
-            border: 1px solid #ddd;
-            margin-right: 5px;
-            border-radius: 5px;
+            color: #ccc;
             transition: background 0.3s;
         }
 
         .sub-tab:hover {
-            background: #e0e0e0;
+            background: #2a2a56;
         }
 
         .sub-tab.active {
-            background: #ccc;
+            background: #2a2a56;
+            color: #00e0ff;
             font-weight: bold;
         }
 
@@ -75,10 +121,8 @@
             display: block;
         }
 
-        /* Styles pour les fichiers PDF */
         .pdf-list {
-            list-style-type: none;
-            padding: 0;
+            list-style: none;
         }
 
         .pdf-list li {
@@ -86,12 +130,12 @@
         }
 
         .pdf-list a {
-            color: blue;
+            color: #00e0ff;
             text-decoration: underline;
         }
 
         .pdf-list a:hover {
-            color: darkblue;
+            color: #66d1ff;
         }
     </style>
 </head>
@@ -109,46 +153,46 @@
     </header>
 
     <main>
-        <section>
+        <section class="container">
             <h2>Documentation</h2>
 
-            <!-- Onglets principaux -->
+    
             <div class="tabs">
-                <a href="#reseau" class="tab active" onclick="showTab(event, 'reseau')">Réseau</a>
-                <a href="#developpement" class="tab" onclick="showTab(event, 'developpement')">Développement</a>
-                <a href="#securite" class="tab" onclick="showTab(event, 'securite')">CyberSécurité</a>
-                <a href="#stage" class="tab" onclick="showTab(event, 'stage')">Stage</a>
+                <div class="tab active" data-target="reseau">Réseau</div>
+                <div class="tab" data-target="developpement">Développement</div>
+                <div class="tab" data-target="securite">CyberSécurité</div>
+                <div class="tab" data-target="stage">Stage</div>
             </div>
 
-            <!-- Contenu des sections -->
+      
             <div id="reseau" class="content-section active">
                 <h3>Documentation Réseau</h3>
                 <ul class="pdf-list">
-                    <li><a href="" target="_blank"></a></li>
+                    
                 </ul>
             </div>
 
             <div id="developpement" class="content-section">
                 <h3>Documentation Développement</h3>
-                
-                <!-- Sous-onglets pour Développement -->
+
+            
                 <div class="sub-tabs">
-                    <a href="#base-donnees" class="sub-tab active" onclick="showSubTab(event, 'base-donnees')">Base de données</a>
-                    <a href="#javascript" class="sub-tab" onclick="showSubTab(event, 'javascript')">JavaScript</a>
+                    <div class="sub-tab active" data-target="base-donnees">Base de Données</div>
+                    <div class="sub-tab" data-target="javascript">JavaScript</div>
                 </div>
 
-                <!-- Contenu des sous-onglets -->
+          
                 <div id="base-donnees" class="sub-content-section active">
+                    <h4>Base de Données</h4>
                     <ul class="pdf-list">
                         <li><a href="Tutoriel_LohanPoulain.pdf" target="_blank">Tutoriel pour accéder à PHPMyAdmin</a></li>
-                        <li><a href="" target="_blank"></a></li>
                     </ul>
                 </div>
 
                 <div id="javascript" class="sub-content-section">
+                    <h4>JavaScript</h4>
                     <ul class="pdf-list">
-                        <li><a href="" target="_blank"></a></li>
-                        <li><a href="" target="_blank"></a></li>
+            
                     </ul>
                 </div>
             </div>
@@ -156,48 +200,53 @@
             <div id="securite" class="content-section">
                 <h3>Documentation CyberSécurité</h3>
                 <ul class="pdf-list">
-                    <li><a href="" target="_blank"></a></li>
+
                 </ul>
             </div>
-        </div>
-        <div id="stage" class="content-section">
-            <h3>Stage</h3>
-            <ul class="pdf-list">
-                <li><a href="avenant_convention_stage.pdf" target="_blank">Avenant à la convention de stage</a></li>
-            </ul>
-        </div>
+
+            <div id="stage" class="content-section">
+                <h3>Stage</h3>
+                <ul class="pdf-list">
+                    <li><a href="avenant_convention_stage.pdf" target="_blank">Avenant à la convention de stage</a></li>
+                </ul>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2024 Lohan Poulain - BTS SIO</p>
+        <p>© 2024 Portfolio BTS SIO</p>
     </footer>
 
-    <!-- Script pour les onglets -->
     <script>
-        function showTab(event, sectionId) {
-            event.preventDefault();
+        document.addEventListener('DOMContentLoaded', () => {
+       
+            const tabs = document.querySelectorAll('.tab');
+            const sections = document.querySelectorAll('.content-section');
 
-            // Désactiver tous les onglets et sections
-            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    sections.forEach(section => section.classList.remove('active'));
 
-            // Activer l'onglet cliqué
-            event.target.classList.add('active');
-            document.getElementById(sectionId).classList.add('active');
-        }
+                    tab.classList.add('active');
+                    document.getElementById(tab.dataset.target).classList.add('active');
+                });
+            });
 
-        function showSubTab(event, subSectionId) {
-            event.preventDefault();
+        
+            const subTabs = document.querySelectorAll('.sub-tab');
+            const subSections = document.querySelectorAll('.sub-content-section');
 
-            // Désactiver tous les sous-onglets et sous-sections
-            document.querySelectorAll('.sub-tab').forEach(subTab => subTab.classList.remove('active'));
-            document.querySelectorAll('.sub-content-section').forEach(subSection => subSection.classList.remove('active'));
+            subTabs.forEach(subTab => {
+                subTab.addEventListener('click', () => {
+                    subTabs.forEach(st => st.classList.remove('active'));
+                    subSections.forEach(ss => ss.classList.remove('active'));
 
-            // Activer le sous-onglet cliqué
-            event.target.classList.add('active');
-            document.getElementById(subSectionId).classList.add('active');
-        }
+                    subTab.classList.add('active');
+                    document.getElementById(subTab.dataset.target).classList.add('active');
+                });
+            });
+        });
     </script>
 </body>
 </html>
