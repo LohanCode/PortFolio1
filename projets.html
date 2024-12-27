@@ -4,7 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio BTS SIO - Projets</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e2f;
+            color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header, footer {
+            background-color: #14142b;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #00e0ff;
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .tab {
+            padding: 10px 15px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #f4f4f4;
+            transition: background 0.3s;
+        }
+
+        .tab:hover {
+            background: #2a2a56;
+        }
+
+        .tab.active {
+            background: #2a2a56;
+            font-weight: bold;
+            border-bottom: 2px solid #1e1e2f;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -18,18 +101,53 @@
             </ul>
         </nav>
     </header>
+
     <main>
-        <section>
+        <section class="container">
             <h2>Mes réalisations</h2>
-            <ul>
-                <li><strong>Projet SLAM1</strong>: Calculateur de note à la saisie d'un élève pour le BTS SIO</li>
-                <li><strong>Projet SISR1</strong>: Routage et sous-réseau</li>
-                <li><strong>Projet 3</strong>: [Description du projet]</li>
-            </ul>
+
+            <div class="tabs">
+                <div class="tab active" data-target="slam1">SLAM 1</div>
+                <div class="tab" data-target="sisr1">SISR 1</div>
+                <div class="tab" data-target="projet3">Projet 3</div>
+            </div>
+
+            <div id="slam1" class="content-section active">
+                <h3>SLAM 1</h3>
+                <p>Calculateur de note à la saisie d'un élève pour le BTS SIO.</p>
+            </div>
+
+            <div id="sisr1" class="content-section">
+                <h3>SISR 1</h3>
+                <p>Routage et sous-réseau.</p>
+            </div>
+
+            <div id="projet3" class="content-section">
+                <h3>Projet 3</h3>
+                <p>[Description du projet]</p>
+            </div>
         </section>
     </main>
+
     <footer>
         <p>© 2024 Lohan Poulain - BTS SIO</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab');
+            const sections = document.querySelectorAll('.content-section');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    sections.forEach(section => section.classList.remove('active'));
+
+                    tab.classList.add('active');
+                    document.getElementById(tab.dataset.target).classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
