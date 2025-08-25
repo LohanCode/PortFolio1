@@ -245,4 +245,32 @@ footer {
         font-size: 0.9rem;
         padding: 8px 0;
     }
+    /* Empêche le débordement horizontal des textes longs et du code */
+pre, code {
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-x: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+pre {
+    background: #181830;
+    color: #fff;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 12px 0;
+    font-size: 0.98em;
+    overflow-x: auto;
+}
+
+a {
+    word-break: break-all;
+}
+
+/* Pour les titres et paragraphes trop longs */
+h1, h2, h3, h4, h5, h6, p, li {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
 }
