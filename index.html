@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Lohan Poulain - BTS SIO SLAM</title>
+    <meta name="description" content="Découvrez mon parcours, mes projets et mes compétences en BTS SIO option SLAM.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenue sur mon Portfolio</h1>
+    </header>
+
+    <section id="accueil" class="hero-section">
+        <h1>Bonjour, je suis Lohan Poulain</h1>
+        <p>Étudiant en BTS SIO à Lille, passionné par l'informatique et par le Développement.</p>
+        <div class="cta-buttons">
+            <a href="#projets" class="cta-button">Découvrez mes projets</a>
+            <a href="#documentation" class="cta-button">Voir ma documentation</a>
+            <a href="#veille" class="cta-button">Consultez ma veille </a>
+        </div>
+    </section>
+
+    <main>
+        <section id="projets" class="container">
+            <nav class="section-nav">
+                <a href="#accueil">Accueil</a>
+                <a href="#projets">Projets</a>
+                <a href="#veille">Veille</a>
+                <a href="#documentation">Documentation</a>
+            </nav>
+            <h2>Mes réalisations</h2>
+            <div class="tabs">
+                <div class="tab active" data-target="slam1">SLAM 1</div>
+                <div class="tab" data-target="sisr1">SISR 1</div>
+                <div class="tab" data-target="projet3">Projet 3</div>
+            </div>
+            <div id="slam1" class="content-section active">
+                <h3>SLAM 1</h3>
+                <p>Calculateur de note à la saisie d'un élève pour le BTS SIO.</p>
+            </div>
+            <div id="sisr1" class="content-section">
+                <h3>SISR 1</h3>
+                <p>Routage et sous-réseau.</p>
+            </div>
+            <div id="projet3" class="content-section">
+                <h3>Projet 3</h3>
+                <p>[Description du projet]</p>
+            </div>
+        </section>
+
+       <section id="veille" class="container">
+    <nav class="section-nav">
+        <a href="#accueil">Accueil</a>
+        <a href="#projets">Projets</a>
+        <a href="#veille">Veille</a>
+        <a href="#documentation">Documentation</a>
+    </nav>
+    <h2>Veille technologique</h2>
+
+    <h3>1. Présentation du thème</h3>
+    <p>
+        <strong>Sujet de ma veille technologique :</strong> Les bonnes pratiques de développement logiciel.<br>
+        Ce thème a été choisi car il est essentiel pour garantir la qualité, la maintenabilité et la sécurité des projets que je développe.
+    </p>
+
+    <h3>2. Objectif de la veille</h3>
+    <p>
+        L’objectif de cette veille est de suivre l’évolution des bonnes pratiques en développement logiciel, notamment autour de la qualité du code (Clean Code, principes SOLID), de la sécurité (OWASP), des tests et de la collaboration (Git).<br>
+        Cela me permettra d’améliorer mes compétences de développeur et d’appliquer ces pratiques dans mes projets professionnels et personnels.
+    </p>
+
+    <h3>3. Méthodologie et outils mis en place</h3>
+    <ul>
+        <li><strong>Google Alerts</strong> : alertes sur “bonnes pratiques développement logiciel”, "qualité du code logiciel", "sécurité applications web", tests unitaires bonnes pratiques", principes SOLID programmation", "Clean Code développement", "revue de code bonne pratiques"</li>
+
+    </ul>
+
+    <h3>4. Premières sources identifiées</h3>
+    <ul>
+        
+    </ul>
+
+    <h3>5. Exemple de suivi</h3>
+    <p>
+ 
+    </p>
+</section>
+
+<section id="documentation" class="container">
+    <nav class="section-nav">
+        <a href="#accueil">Accueil</a>
+        <a href="#projets">Projets</a>
+        <a href="#veille">Veille</a>
+        <a href="#documentation">Documentation</a>
+    </nav>
+    <h2>Documentation</h2>
+
+    <h3>1. Tutoriels</h3>
+    <ul>
+        <li><strong>Installer un environnement PHP/MySQL</strong> : <a href="https://www.php.net/manual/fr/install.php" target="_blank">Voir la doc officielle</a></li>
+    <h3>2. Fiches de synthèse</h3>
+    <ul>
+        <li><strong>HTML/CSS/JS</strong> : <a href="https://developer.mozilla.org/fr/" target="_blank">MDN Web Docs</a></li>
+        <li><strong>SQL</strong> : <a href="https://sql.sh/" target="_blank">SQL.sh</a></li>
+    </ul>
+
+    <h3>3. Extraits de code utiles</h3>
+    <pre><code>// Connexion à MySQL en PHP
+$pdo = new PDO('mysql:host=localhost;dbname=ma_base', 'user', 'pass');
+</code></pre>
+
+    <h3>4. Documentation de mes projets</h3>
+    <ul>
+        <li><strong>Calculateur de notes</strong> : <a href="#projets">Voir la section Projets</a></li>
+    </ul>
+</section>
+    </main>
+
+    <footer>
+        <p>© 2025 Lohan Poulain - BTS SLAM</p>
+    </footer>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const tabs = document.querySelectorAll('.tab');
+            const sections = document.querySelectorAll('.content-section');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    sections.forEach(section => section.classList.remove('active'));
+                    tab.classList.add('active');
+                    document.getElementById(tab.dataset.target).classList.add('active');
+                });
+            });
+
+            const navs = document.querySelectorAll('.section-nav');
+            const sectionIds = ['accueil', 'projets', 'veille', 'documentation'];
+            const sectionElements = sectionIds.map(id => document.getElementById(id));
+
+            function updateNavHighlight() {
+                let index = 0;
+                const scrollY = window.scrollY + window.innerHeight / 3;
+                sectionElements.forEach((section, i) => {
+                    if (section && section.offsetTop <= scrollY) {
+                        index = i;
+                    }
+                });
+                navs.forEach(nav => {
+                    nav.querySelectorAll('a').forEach((a, i) => {
+                        if (i === index) {
+                            a.classList.add('active');
+                        } else {
+                            a.classList.remove('active');
+                        }
+                    });
+                });
+            }
+
+            window.addEventListener('scroll', updateNavHighlight);
+            updateNavHighlight();
+
+            if (window.location.hash) {
+                history.replaceState(null, null, ' ');
+                window.scrollTo(0, 0);
+            }
+        });
+    </script>
+</body>
+</html>
