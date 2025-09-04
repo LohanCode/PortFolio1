@@ -15,10 +15,29 @@
     <section id="accueil" class="hero-section">
         <h1>Bonjour, je suis Lohan Poulain</h1>
         <p>Étudiant en BTS SIO à Lille, passionné par l'informatique et par le Développement.</p>
+        
+        <!-- Explication BTS SIO intégrée -->
+        <div class="bts-explanation">
+            <h3>Le BTS SIO : Deux spécialisations complémentaires</h3>
+            <div class="bts-options-inline">
+                <div class="bts-option-inline slam">
+                    <h4>SLAM</h4>
+                    <p>EXPLICATION SLAM</p>
+                    <!--La je vais expliquer SLAM-->
+                </div>
+                <div class="bts-option-inline sisr">
+                    <h4>SISR</h4>
+                    <p>EXPLICATION SISR</p>
+                    
+                </div>
+            </div>
+            <p class="my-choice-inline"><strong>Mon choix :</strong> SLAM - passionné par le développement et la création d'applications</p>
+        </div>
+        
         <div class="cta-buttons">
             <a href="#projets" class="cta-button">Découvrez mes projets</a>
-            <a href="#documentation" class="cta-button">Voir ma documentation</a>
             <a href="#veille" class="cta-button">Consultez ma veille </a>
+            <a href="#documentation" class="cta-button">Voir ma documentation</a>
         </div>
     </section>
 
@@ -46,7 +65,7 @@
             </div>
             <div id="projet3" class="content-section">
                 <h3>Projet 3</h3>
-                <p>[Description du projet]</p>
+                <p>Description du projet</p>
             </div>
         </section>
 
@@ -62,30 +81,20 @@
     <h3>1. Présentation du thème</h3>
     <p>
         <strong>Sujet de ma veille technologique :</strong> Les bonnes pratiques de développement logiciel.<br>
-        Ce thème a été choisi car il est essentiel pour garantir la qualité, la maintenabilité et la sécurité des projets que je développe.
+        J'ai choisi ce thème car il est essentiel pour garantir la qualité, la maintenabilité et la sécurité des projets que je développe.
     </p>
 
     <h3>2. Objectif de la veille</h3>
     <p>
-        L’objectif de cette veille est de suivre l’évolution des bonnes pratiques en développement logiciel, notamment autour de la qualité du code (Clean Code, principes SOLID), de la sécurité (OWASP), des tests et de la collaboration (Git).<br>
+        L’objectif de ma veille est de suivre l’évolution des bonnes pratiques en développement logiciel, notamment autour de la qualité du code, de la sécurité, des tests et de la collaboration (Git).<br>
         Cela me permettra d’améliorer mes compétences de développeur et d’appliquer ces pratiques dans mes projets professionnels et personnels.
     </p>
 
     <h3>3. Méthodologie et outils mis en place</h3>
     <ul>
-        <li><strong>Google Alerts</strong> : alertes sur “bonnes pratiques développement logiciel”, "qualité du code logiciel", "sécurité applications web", tests unitaires bonnes pratiques", principes SOLID programmation", "Clean Code développement", "revue de code bonne pratiques"</li>
+        <li><strong>Google Alerts</strong> : alertes sur “bonnes pratiques développement logiciel”, "qualité du code logiciel", "sécurité applications web", "revue de code bonne pratiques"</li>
 
     </ul>
-
-    <h3>4. Premières sources identifiées</h3>
-    <ul>
-        
-    </ul>
-
-    <h3>5. Exemple de suivi</h3>
-    <p>
- 
-    </p>
 </section>
 
 <section id="documentation" class="container">
@@ -97,24 +106,29 @@
     </nav>
     <h2>Documentation</h2>
 
-    <h3>1. Tutoriels</h3>
-    <ul>
-        <li><strong>Installer un environnement PHP/MySQL</strong> : <a href="https://www.php.net/manual/fr/install.php" target="_blank">Voir la doc officielle</a></li>
-    <h3>2. Fiches de synthèse</h3>
-    <ul>
-        <li><strong>HTML/CSS/JS</strong> : <a href="https://developer.mozilla.org/fr/" target="_blank">MDN Web Docs</a></li>
-        <li><strong>SQL</strong> : <a href="https://sql.sh/" target="_blank">SQL.sh</a></li>
-    </ul>
+    <h3>1. CV</h3>
+    <div class="cv-section">
+        <div class="document-download">
+            <h4>📄 Curriculum Vitae</h4>
+            <p>Consultez mon CV complet avec mon parcours, mes compétences et mes expériences.</p>
+            <a href="CV_Lohan.pdf" class="download-button" download>
+                <span class="download-icon">⬇️</span>
+                Télécharger mon CV (PDF)
+            </a>
 
-    <h3>3. Extraits de code utiles</h3>
-    <pre><code>// Connexion à MySQL en PHP
-$pdo = new PDO('mysql:host=localhost;dbname=ma_base', 'user', 'pass');
-</code></pre>
 
-    <h3>4. Documentation de mes projets</h3>
-    <ul>
-        <li><strong>Calculateur de notes</strong> : <a href="#projets">Voir la section Projets</a></li>
-    </ul>
+    <h3>2. Stage</h3>
+    <div class="stage-section">
+        <div class="secure-document">
+            <h4>🔒 Documents de stage (Accès sécurisé)</h4>
+            <p>Convention de stage et documents officiels - Accès restreint aux recruteurs et formateurs.</p>
+            <button class="secure-access-button" onclick="requestStageAccess()">
+                <span class="lock-icon">🔐</span>
+                Demander l'accès aux documents de stage
+            </button>
+
+        </div>
+    </div>
 </section>
     </main>
 
@@ -168,6 +182,17 @@ $pdo = new PDO('mysql:host=localhost;dbname=ma_base', 'user', 'pass');
                 window.scrollTo(0, 0);
             }
         });
+
+        function requestStageAccess() {
+            const email = prompt("Veuillez entrer votre email professionnel pour accéder aux documents de stage :");
+            
+            if (email && email.includes('@')) {
+                alert(`Votre demande d'accès a été envoyée à Lohan Poulain. Un email de confirmation avec le lien sécurisé vous sera envoyé après validation de votre demande.`);
+                console.log(`Demande d'accès reçue de: ${email} - Notification envoyée au propriétaire`);
+            } else if (email !== null) {
+                alert("Veuillez entrer une adresse email valide.");
+            }
+        }
     </script>
 </body>
 </html>

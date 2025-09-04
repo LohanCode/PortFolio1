@@ -203,10 +203,11 @@ footer {
     background-color: #14142b;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 5px 0;
     position: fixed;
     bottom: 0;
     width: 100%;
+    z-index: 1000;
 }
 
 /* Responsive amélioré */
@@ -216,6 +217,7 @@ footer {
         width: 98vw !important;
         padding: 20px 3vw !important;
         max-width: 98vw !important;
+        margin-bottom: 40px !important;
     }
     /* .tabs, .cta-buttons, .section-nav restent en ligne */
     .tab, .cta-button, .section-nav a {
@@ -235,6 +237,7 @@ footer {
         padding: 14px 2vw !important;
         max-width: 99vw !important;
         font-size: 0.95rem;
+        margin-bottom: 35px !important;
     }
     .tab, .cta-button, .section-nav a {
         min-width: 70px;
@@ -242,8 +245,8 @@ footer {
         padding: 7px 5px;
     }
     footer {
-        font-size: 0.9rem;
-        padding: 8px 0;
+        font-size: 0.8rem;
+        padding: 3px 0;
     }
     /* Empêche le débordement horizontal des textes longs et du code */
 pre, code {
@@ -272,5 +275,205 @@ a {
 h1, h2, h3, h4, h5, h6, p, li {
     word-break: break-word;
     overflow-wrap: break-word;
+}
+
+/* Section BTS SIO intégrée dans hero */
+.bts-explanation {
+    margin: 30px 0 20px 0;
+    padding: 25px;
+    background: rgba(42, 42, 86, 0.3);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 224, 255, 0.2);
+}
+
+.bts-explanation h3 {
+    text-align: center;
+    color: #00e0ff;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.bts-options-inline {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.bts-option-inline {
+    text-align: center;
+    padding: 15px;
+    background: rgba(31, 31, 61, 0.4);
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.bts-option-inline.slam {
+    border-color: rgba(0, 224, 255, 0.3);
+}
+
+.bts-option-inline.sisr {
+    border-color: rgba(255, 165, 0, 0.3);
+}
+
+.bts-option-inline:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bts-option-inline.slam:hover {
+    border-color: #00e0ff;
+    box-shadow: 0 6px 12px rgba(0, 224, 255, 0.15);
+}
+
+.bts-option-inline.sisr:hover {
+    border-color: #ffa500;
+    box-shadow: 0 6px 12px rgba(255, 165, 0, 0.15);
+}
+
+.bts-option-inline h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.bts-option-inline.slam h4 {
+    color: #00e0ff;
+}
+
+.bts-option-inline.sisr h4 {
+    color: #ffa500;
+}
+
+.bts-option-inline p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #ccc;
+    line-height: 1.4;
+}
+
+.my-choice-inline {
+    text-align: center;
+    margin: 15px 0 0 0;
+    padding: 12px;
+    background: rgba(0, 224, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 224, 255, 0.2);
+    font-size: 0.95rem;
+}
+
+/* Responsive pour BTS intégré */
+@media (max-width: 768px) {
+    .bts-options-inline {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .bts-explanation {
+        padding: 20px 15px;
+    }
+    
+    .bts-explanation h3 {
+        font-size: 1.2rem;
+    }
+    
+    .bts-option-inline h4 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .bts-explanation {
+        padding: 15px 12px;
+        margin: 20px 0 15px 0;
+    }
+    
+    .bts-option-inline {
+        padding: 12px;
+    }
+    
+    .my-choice-inline {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Styles pour les nouvelles sections CV et Stage */
+.document-download, .secure-document {
+    background: rgba(42, 42, 86, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    border: 1px solid rgba(0, 224, 255, 0.2);
+    text-align: center;
+}
+
+.download-button {
+    display: inline-block;
+    background: linear-gradient(90deg, #00e0ff, #003366);
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.download-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #00b8ff, #001a33);
+    box-shadow: 0 6px 12px rgba(0, 224, 255, 0.3);
+}
+
+.secure-access-button {
+    background: linear-gradient(90deg, #ff6b35, #f7931e);
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    font-weight: bold;
+    border-radius: 8px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+}
+
+.secure-access-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #e55a2b, #d4841a);
+    box-shadow: 0 6px 12px rgba(255, 107, 53, 0.3);
+}
+.quick-info, .stage-summary {
+    background: rgba(31, 31, 61, 0.4);
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    border-left: 4px solid #00e0ff;
+}
+
+.download-icon, .lock-icon {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+/* Responsive pour les nouvelles sections */
+@media (max-width: 600px) {
+    .document-download, .secure-document {
+        padding: 15px;
+    }
+    
+    .download-button, .secure-access-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .quick-info, .stage-summary {
+        padding: 12px;
+    }
 }
 }
