@@ -462,6 +462,129 @@ h1, h2, h3, h4, h5, h6, p, li {
     background: rgba(255, 165, 0, 0.1);
 }
 
+/* Styles pour la timeline */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: #00e0ff;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #00e0ff;
+    border-radius: 50%;
+    top: 15px;
+    right: -8px;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -8px;
+}
+
+.timeline-content {
+    padding: 20px;
+    background: rgba(42, 42, 86, 0.7);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 224, 255, 0.2);
+}
+
+.timeline-date {
+    color: #00e0ff;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.timeline-location {
+    color: #aaa;
+    font-style: italic;
+    margin: 5px 0 10px;
+    font-size: 0.9rem;
+}
+
+.timeline-skills {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.timeline-skills span {
+    background: rgba(0, 224, 255, 0.2);
+    color: #00e0ff;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+}
+
+.timeline-skills span:hover {
+    background: rgba(0, 224, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Responsive pour la timeline */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 31px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 0;
+    }
+    
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+    
+    .timeline-dot {
+        left: 23px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 23px;
+    }
+}
+
 .bts-option-inline:hover {
     transform: scale(1.05);
 }
@@ -567,4 +690,38 @@ h1, h2, h3, h4, h5, h6, p, li {
 .download-icon, .lock-icon {
     margin-right: 8px;
     font-size: 1.1rem;
+}
+
+/* Styles pour la section parcours */
+.parcours-timeline {
+    margin: 20px 0;
+}
+
+.parcours-item {
+    background: rgba(31, 31, 61, 0.4);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0;
+    border-left: 4px solid #00e0ff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.parcours-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 224, 255, 0.2);
+}
+
+.parcours-item h4 {
+    color: #00e0ff;
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+}
+
+.parcours-item p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.parcours-item p strong {
+    color: #fff;
 }
