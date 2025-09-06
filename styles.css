@@ -239,19 +239,93 @@ footer {
     z-index: 1000;
 }
 
-/* Responsive amélioré */
+/* Responsive - garde le design identique et horizontal, adapte seulement les tailles */
 @media (max-width: 900px) {
     .side-info { display: none; }
     .container, .hero-section {
-        width: 98vw !important;
-        padding: 20px 3vw !important;
-        max-width: 98vw !important;
-        margin-bottom: 40px !important;
+        width: 95vw !important;
+        padding: 25px 15px !important;
+        max-width: 95vw !important;
+        margin: 20px auto !important;
     }
-    /* .tabs, .cta-buttons, .section-nav restent en ligne */
-    .tab, .cta-button, .section-nav a {
-        min-width: 90px;
-        font-size: 1rem;
+    
+    /* Ajustements pour garder tout horizontal */
+    .section-nav a {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+    
+    .tab {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+    }
+    
+    .cta-button {
+        font-size: 0.95rem;
+        padding: 12px 18px;
+        margin: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container, .hero-section {
+        width: 98vw !important;
+        padding: 20px 10px !important;
+        max-width: 98vw !important;
+    }
+    
+    /* SLAM/SISR section - reste horizontal mais plus petit */
+    div[style*="display: flex"][style*="gap: 20px"] {
+        gap: 10px !important;
+    }
+    
+    div[style*="display: flex"][style*="gap: 20px"] > div {
+        padding: 15px 10px !important;
+        font-size: 0.9rem !important;
+    }
+    
+    /* Navigation - reste horizontal mais plus compact */
+    .section-nav {
+        gap: 5px;
+        flex-wrap: nowrap;
+    }
+    
+    .section-nav a {
+        font-size: 0.8rem;
+        padding: 8px 6px;
+        flex: 1;
+        min-width: 60px;
+        white-space: nowrap;
+    }
+    
+    /* Tabs - restent horizontaux mais plus compacts */
+    .tabs {
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+    
+    .tab {
+        font-size: 0.85rem;
+        padding: 10px 8px;
+        flex: 1;
+        min-width: 70px;
+    }
+    
+    /* CTA buttons - restent horizontaux mais plus petits */
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+        margin: 5px;
+    }
+    
+    /* CV buttons - restent horizontaux mais plus compacts */
+    div[style*="display: flex"][style*="gap: 15px"] {
+        gap: 8px !important;
+    }
+    
+    div[style*="display: flex"][style*="gap: 15px"] a {
+        font-size: 0.9rem !important;
+        padding: 10px 15px !important;
     }
 }
 
@@ -259,25 +333,61 @@ footer {
     header h1 {
         font-size: 1.2rem;
     }
+    
     .hero-section h1 {
-        font-size: 1.1rem;
+        font-size: 1.8rem;
     }
-    .hero-section, .container {
-        padding: 14px 2vw !important;
+    
+    .container, .hero-section {
+        width: 99vw !important;
+        padding: 15px 8px !important;
         max-width: 99vw !important;
-        font-size: 0.95rem;
-        margin-bottom: 35px !important;
+        font-size: 0.9rem;
     }
-    .tab, .cta-button, .section-nav a {
-        min-width: 70px;
-        font-size: 0.95rem;
-        padding: 7px 5px;
+    
+    /* Tout reste horizontal mais très compact */
+    .section-nav a {
+        font-size: 0.75rem;
+        padding: 6px 4px;
+        white-space: nowrap;
     }
-    footer {
+    
+    .tab {
         font-size: 0.8rem;
-        padding: 3px 0;
+        padding: 8px 6px;
     }
-    /* Empêche le débordement horizontal des textes longs et du code */
+    
+    .cta-button {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+        margin: 4px;
+    }
+    
+    footer {
+        font-size: 0.75rem;
+        padding: 6px 0;
+        position: relative;
+        margin-top: 20px;
+    }
+    
+    /* SLAM/SISR très compact mais horizontal */
+    div[style*="display: flex"][style*="gap: 20px"] {
+        gap: 8px !important;
+    }
+    
+    div[style*="display: flex"][style*="gap: 20px"] > div {
+        padding: 12px 8px !important;
+        font-size: 0.85rem !important;
+    }
+    
+    /* CV buttons très compacts mais horizontaux */
+    div[style*="display: flex"][style*="gap: 15px"] a,
+    div[style*="display: flex"][style*="gap: 8px"] a {
+        font-size: 0.85rem !important;
+        padding: 8px 12px !important;
+    }
+}
+/* Empêche le débordement horizontal des textes longs et du code */
 pre, code {
     white-space: pre-wrap;
     word-break: break-word;
@@ -397,46 +507,6 @@ h1, h2, h3, h4, h5, h6, p, li {
     font-size: 0.95rem;
 }
 
-/* Responsive pour BTS intégré */
-@media (max-width: 768px) {
-    .bts-options-inline {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .bts-explanation {
-        padding: 20px 15px;
-    }
-    
-    .bts-explanation h3 {
-        font-size: 1.2rem;
-    }
-    
-    .bts-option-inline {
-        max-width: none;
-        padding: 20px;
-    }
-    
-    .bts-option-inline h4 {
-        font-size: 1.3rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .bts-explanation {
-        padding: 15px 12px;
-        margin: 20px 0 15px 0;
-    }
-    
-    .bts-option-inline {
-        padding: 12px;
-    }
-    
-    .my-choice-inline {
-        padding: 10px;
-        font-size: 0.9rem;
-    }
-}
 
 /* Styles pour les nouvelles sections CV et Stage */
 .document-download, .secure-document {
@@ -497,37 +567,4 @@ h1, h2, h3, h4, h5, h6, p, li {
 .download-icon, .lock-icon {
     margin-right: 8px;
     font-size: 1.1rem;
-}
-
-/* Responsive pour les nouvelles sections */
-@media (max-width: 600px) {
-    .document-download, .secure-document {
-        padding: 15px;
-    }
-    
-    .download-button, .secure-access-button {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-    
-    .quick-info, .stage-summary {
-        padding: 12px;
-    }
-}
-
-/* Debug styles pour vérifier l'affichage */
-.bts-explanation {
-    display: block !important;
-    visibility: visible !important;
-}
-
-.bts-options-inline {
-    display: grid !important;
-    visibility: visible !important;
-}
-
-.bts-option-inline {
-    display: block !important;
-    visibility: visible !important;
-}
 }
