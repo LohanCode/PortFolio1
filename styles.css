@@ -419,6 +419,42 @@ pre {
 
 a {
     word-break: break-all;
+    text-decoration: none;
+    color: #00e0ff;
+    transition: all 0.3s ease;
+}
+
+.school-link {
+    color: #00e0ff;
+    position: relative;
+    padding: 2px 5px;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(0, 224, 255, 0.5);
+    z-index: 1;
+}
+
+.school-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #00e0ff, #00b8ff);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.school-link:hover {
+    color: #fff;
+    text-shadow: 0 0 12px rgba(0, 224, 255, 0.8);
+}
+
+.school-link:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 /* Pour les titres et paragraphes trop longs */
