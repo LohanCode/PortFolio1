@@ -107,19 +107,98 @@ header h1 {
 .hero-section h1 {
     font-size: 2.5rem;
     color: #00e0ff;
-    animation: fadeInUp 1s ease;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-}
-
-.hero-section h5 {
-    font-size: 1.4rem;
-    color: #00e0ff;
-    margin: 25px 0 15px 0;
+    margin: 20px 0 15px 0;
     font-weight: 600;
     text-shadow: 0 0 10px rgba(0, 224, 255, 0.5);
     position: relative;
-    padding-left: 15px;
-    border-left: 3px solid #00e0ff;
+    padding-left: 0;
+    border-left: none;
+}
+
+/* Style de base pour tous les titres */
+h1, h2, h3, h4, h5, h6 {
+    color: #00e0ff;
+    margin: 20px 0 15px 0;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(0, 224, 255, 0.5);
+    position: relative;
+    padding-bottom: 5px;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Ajout du soulignement animé pour les titres principaux */
+h1::after, h2::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #00e0ff;
+    transition: width 0.3s ease-out;
+}
+
+h1:not(.slam-title):not(.sisr-title):hover::after, 
+h2:not(.slam-title):not(.sisr-title):hover::after {
+    width: 100%;
+}
+
+/* Styles pour les titres des sections SLAM/SISR */
+.section-subtitle {
+    text-align: center;
+    color: #00e0ff;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    animation: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 0 20px 0 !important;
+}
+
+.slam-title {
+    margin: 0 0 10px 0 !important;
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    color: #00e0ff !important;
+    animation: none !important;
+    border: none !important;
+    padding: 0 !important;
+    pointer-events: none;
+}
+
+.sisr-title {
+    margin: 0 0 10px 0 !important;
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    color: #ffa500 !important;
+    animation: none !important;
+    border: none !important;
+    padding: 0 !important;
+    pointer-events: none;
+}
+
+.no-hover-effect {
+    pointer-events: none !important;
+}
+
+.no-hover-effect::after {
+    display: none !important;
+}
+
+/* Désactivation des styles pour les sections SLAM/SISR */
+#slam1 h3, #slam1 h4,
+#sisr1 h3, #sisr1 h4,
+#slam1 h3 *, #slam1 h4 *,
+#sisr1 h3 *, #sisr1 h4 * {
+    animation: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 0 10px 0 !important;
+}
+
+/* Animation du soulignement au chargement pour les titres principaux */
+.hero-section h1::after {
+    animation: underline 0.5s ease-out 0.8s forwards;
 }
 
 @keyframes fadeInUp {
