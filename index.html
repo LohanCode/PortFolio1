@@ -8,8 +8,15 @@
     <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
+    <!-- Orbes lumineux flottants pour effet immersif -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    
+    <!-- Conteneur de particules -->
+    <div class="particles" id="particles"></div>
     <header>
-        <h1 class="animated-title">Bienvenue sur mon Portfolio</h1>
+        <h1 class="animated-title" data-text="Bienvenue sur mon Portfolio">Bienvenue sur mon Portfolio</h1>
     </header>
 
     <section id="accueil" class="hero-section">
@@ -32,76 +39,178 @@
         </div>
         
         <div class="cta-buttons">
-            <a href="#projets" class="cta-button">Découvrez mes projets</a>
-            <a href="#veille" class="cta-button">Consultez ma veille </a>
-            <a href="#documentation" class="cta-button">Mon expérience pro</a>
+            <a href="#competences" class="cta-button">Mes compétences</a>
+            <a href="#veille" class="cta-button">Ma veille techno</a>
+            <a href="#documentation" class="cta-button">Mon stage</a>
+            <a href="#tableau" class="cta-button">Tableau BTS</a>
         </div>
     </section>
 
     <main>
-        <section id="projets" class="container">
+        <!-- Section Compétences Techniques -->
+        <section id="competences" class="container">
             <nav class="section-nav">
                 <a href="#accueil">Accueil</a>
-                <a href="#projets">Projets</a>
+                <a href="#competences">Compétences</a>
                 <a href="#veille">Veille</a>
                 <a href="#documentation">Stage</a>
+                <a href="#tableau">Tableau BTS</a>
             </nav>
-            <h2 class="animated-title">Mes réalisations</h2>
-            <div class="tabs">
-                <div class="tab active" data-target="slam1">AP SLAM 1ère année</div>
-                <div class="tab" data-target="sisr1">AP SLAM 2ème année</div>
-                <div class="tab" data-target="projet3">Projet 3</div>
-            </div>
-            <div id="slam1" class="content-section active">
-                <h3>AP SLAM 1ère année</h3>
-                <h4 class="no-hover-effect">Calculateur de note à la saisie d'un élève pour le BTS SIO.</h4>
-                <p>Nous avons fait un travail de groupe pour pouvoir calculer les notes qu'un élève doit avoir pour obtenir son BTS SIO avec donc les coefficients, toute les notes à obtenir etc... Pour cela on à dû utiliser plusieurs langages de programmation, notamment HTML, CSS pour la partie Formulaire & Design de notre site et on a dû utiliser le PHP pour avoir accès à la base de donnée de notre site.
-                </p>
-            </div>
-            <div id="sisr1" class="content-section">
-                <h3>AP SLAM 2ème année</h3>
-                <p>Description du projet</p>
-            </div>
-            <div id="projet3" class="content-section">
-                <h3>Projet 3</h3>
-                <p>Description du projet</p>
+            <h2 class="animated-title">Mes Compétences Techniques</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-title">👨‍💻 Langages de Programmation</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">HTML5/CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Java</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="skill-title">🛠️ Frameworks & Bibliothèques</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Symfony</span>
+                        <span class="skill-tag">Twig</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="skill-title">🔧 Outils & Environnement</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">VSCode</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="skill-title">🗄️ Base de Données</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">phpMyAdmin</span>
+
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="skill-title">📝 Méthodologies</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Méthode Agile/Scrum</span>
+                        <span class="skill-tag">Tests Unitaires</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="skill-title">🔒 Sécurité</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">HTTPS/SSL</span>
+
+                    </div>
+                </div>
             </div>
         </section>
 
-       <section id="veille" class="container">
-    <nav class="section-nav">
-        <a href="#accueil">Accueil</a>
-        <a href="#projets">Projets</a>
-        <a href="#veille">Veille</a>
-        <a href="#documentation">Stage</a>
-    </nav>
-    <h2 class="animated-title">Veille technologique</h2>
-
-    <h3 class="animated-title">1. Présentation du thème</h3>
-    <p>
-        <strong>Sujet de ma veille technologique :</strong> Les bonnes pratiques de développement logiciel.<br>
-        J'ai choisi ce thème car il est essentiel pour garantir la qualité, la maintenabilité et la sécurité des projets que je développe.
-    </p>
-
-    <h3 class="animated-title">2. Objectif de la veille</h3>
-    <p>
-        L’objectif de ma veille est de suivre l’évolution des bonnes pratiques en développement logiciel, notamment autour de la qualité du code, de la sécurité, des tests et de la collaboration (Git).<br>
-        Cela me permettra d’améliorer mes compétences de développeur et d’appliquer ces pratiques dans mes projets professionnels et personnels.
-    </p>
-
-    <h3 class="animated-title">3. Méthodologie et outils mis en place</h3>
-    <ul>
-        <li><strong>Google Alerts</strong> : alertes sur “bonnes pratiques développement logiciel”, "qualité du code logiciel", "sécurité applications web", "revue de code bonne pratiques"</li>
-
-    </ul>
-</section>
+        <!-- Section Veille Technologique -->
+        <section id="veille" class="container">
+            <nav class="section-nav">
+                <a href="#accueil">Accueil</a>
+                <a href="#competences">Compétences</a>
+                <a href="#veille">Veille</a>
+                <a href="#documentation">Stage</a>
+                <a href="#tableau">Tableau BTS</a>
+            </nav>
+            <h2 class="animated-title">Veille Technologique</h2>
+            
+            <div class="veille-intro">
+                <h3>📚 Thème : Les bonnes pratiques du développement</h3>
+                <p>Ma veille technologique porte sur l'intégration de l'IA dans les pratiques de développement, un sujet crucial pour rester compétitif dans le domaine du développement logiciel.</p>
+                
+                <h4>Pourquoi ce thème ?</h4>
+                <p>L'IA transforme radicalement notre façon de coder : génération de code, détection de bugs, optimisation des performances. Il est essentiel de comprendre et maîtriser ces nouveaux outils.</p>
+            </div>
+            
+            <h3 class="animated-title">📰 Articles de Veille</h3>
+            <!--LES VEILLES NE SONT QUE EXEMPLE, LES CHANGER PLUS TARD-->
+            <div class="veille-article">
+                <h4>1. GitHub Copilot : Révolution ou Simple Assistant ?</h4>
+                <p class="article-date">Source : GitHub Blog - Novembre 2024</p>
+                <div class="article-content">
+                    <p><strong>Résumé :</strong> GitHub Copilot a changé la donne en matière de productivité. L'article analyse comment cet outil basé sur GPT peut augmenter la productivité de 55% selon une étude Microsoft.</p>
+                    <p><strong>Points clés :</strong></p>
+                    <ul>
+                        <li>Génération automatique de tests unitaires</li>
+                        <li>Complétion de code contextuelle</li>
+                        <li>Détection de patterns et suggestions d'amélioration</li>
+                    </ul>
+                    <p><strong>Mon avis :</strong> Très utile pour les tâches répétitives, mais nécessite une vérification humaine constante.</p>
+                </div>
+            </div>
+            
+            <div class="veille-article">
+                <h4>2. ChatGPT et le Développement : Guide Pratique</h4>
+                <p class="article-date">Source : Dev.to - Octobre 2024</p>
+                <div class="article-content">
+                    <p><strong>Résumé :</strong> Comment utiliser efficacement ChatGPT pour le développement : de la conception à la documentation en passant par le debugging.</p>
+                    <p><strong>Cas d'usage concrets :</strong></p>
+                    <ul>
+                        <li>Génération de documentation technique</li>
+                        <li>Explication de code complexe</li>
+                        <li>Conversion entre langages de programmation</li>
+                        <li>Optimisation d'algorithmes</li>
+                    </ul>
+                    <p><strong>Application personnelle :</strong> J'utilise ChatGPT pour générer des squelettes de code et comprendre des concepts complexes rapidement.</p>
+                </div>
+            </div>
+            
+            <div class="veille-article">
+                <h4>3. Sécurité et IA : Les Nouveaux Enjeux</h4>
+                <p class="article-date">Source : OWASP Foundation - Septembre 2024</p>
+                <div class="article-content">
+                    <p><strong>Résumé :</strong> L'OWASP met en garde contre les nouvelles vulnérabilités introduites par l'utilisation d'IA dans le code.</p>
+                    <p><strong>Risques identifiés :</strong></p>
+                    <ul>
+                        <li>Injection de code malveillant dans les modèles</li>
+                        <li>Fuite de données sensibles via les prompts</li>
+                        <li>Dépendance excessive aux suggestions IA</li>
+                    </ul>
+                    <p><strong>Bonnes pratiques :</strong> Toujours vérifier le code généré, ne jamais partager de données sensibles, maintenir une compréhension profonde du code.</p>
+                </div>
+            </div>
+            
+            <div class="veille-article">
+                <h4>4. Cursor : L'IDE du Futur</h4>
+                <p class="article-date">Source : TechCrunch - Août 2024</p>
+                <div class="article-content">
+                    <p><strong>Résumé :</strong> Cursor est un nouvel IDE entièrement pensé autour de l'IA, offrant une expérience de développement révolutionnaire.</p>
+                    <p><strong>Fonctionnalités innovantes :</strong></p>
+                    <ul>
+                        <li>Chat intégré avec contexte du projet complet</li>
+                        <li>Refactoring intelligent assisté par IA</li>
+                        <li>Détection proactive de bugs</li>
+                    </ul>
+                    <p><strong>Retour d'expérience :</strong> Testé pendant 2 semaines, gain de temps estimé à 30% sur les projets complexes.</p>
+                </div>
+            </div>
+            
+            <h3 class="animated-title">🏁 Conclusion de ma Veille</h3>
+            <div class="veille-conclusion">
+                <p>L'IA est désormais incontournable dans le développement moderne. Les outils comme GitHub Copilot et ChatGPT ne remplacent pas les développeurs mais les rendent plus efficaces. La clé est de les utiliser intelligemment tout en gardant un esprit critique sur le code généré.</p>
+                <p><strong>Mes outils de veille :</strong> Google Alerts, Dev.to, GitHub Blog, Twitter/X (suivis de développeurs influents), YouTube (conférences tech).</p>
+            </div>
+        </section>
 
 <section id="documentation" class="container">
     <nav class="section-nav">
         <a href="#accueil">Accueil</a>
-        <a href="#projets">Projets</a>
+        <a href="#competences">Compétences</a>
         <a href="#veille">Veille</a>
         <a href="#documentation">Stage</a>
+        <a href="#tableau">Tableau BTS</a>
     </nav>
     <h2 class="animated-title">Mon expérience pro</h2>
 
@@ -185,7 +294,6 @@
                     <li>Auto-Formation Git/Docker</li>
                     
                 </ul>
-                <h5>Référenciel de compétences</h5>
                 
                 <h5>Missions réalisées</h5>
                 <ul style="text-align: left; margin: 15px 0; padding-left: 20px; color: #ccc;">
@@ -208,6 +316,130 @@
 </section>
     </main>
 
+    <!-- Section Tableau de Synthèse BTS -->
+    <section id="tableau" class="container">
+        <nav class="section-nav">
+            <a href="#accueil">Accueil</a>
+            <a href="#competences">Compétences</a>
+            <a href="#veille">Veille</a>
+            <a href="#documentation">Stage</a>
+            <a href="#tableau">Tableau BTS</a>
+        </nav>
+        <h2 class="animated-title">Tableau de Synthèse BTS SIO</h2>
+        
+        <div class="tableau-intro">
+            <p>Voici mon tableau de synthèse des compétences acquises durant ma formation BTS SIO option SLAM. Ce tableau recense l'ensemble des projets réalisés en cours et en stage, ainsi que les compétences développées.</p>
+            
+            <div class="tableau-download">
+                <h3>📄 Télécharger mon Tableau de Synthèse</h3>
+                <p>Le tableau complet au format Excel est disponible au téléchargement. Il contient :</p>
+                <ul>
+                    <li>La liste complète des projets réalisés</li>
+                    <li>Les compétences du référentiel BTS SIO</li>
+                    <li>Les technologies utilisées pour chaque projet</li>
+                    <li>Les preuves et documentations associées</li>
+                </ul>
+                
+                <div class="download-buttons">
+                    <a href="tableau_synthese_bts.xlsx" download class="download-btn excel">
+                        <span>📈</span> Télécharger le Tableau Excel
+                    </a>
+                    <a href="tableau_synthese_bts.pdf" target="_blank" class="download-btn pdf">
+                        <span>📄</span> Consulter en PDF
+                    </a>
+                </div>
+            </div>
+            
+            <div class="tableau-preview">
+                <h3>🔍 Aperçu du Contenu</h3>
+                <p>Le tableau de synthèse contient les projets suivants :</p>
+                
+                <div class="project-summary">
+                    <h4>Projets en Cours (AP)</h4>
+                    <ul>
+                        <li><strong>Calculateur BTS SIO</strong> - Application web PHP/MySQL</li>
+                        <li><strong>BIENTOT</strong> BIENTOT</li>
+                        <li><strong>BIENTOT</strong> BIENTOT</li>
+                    </ul>
+                </div>
+                
+                <div class="project-summary">
+                    <h4>Projets en Stage (NACON)</h4>
+                    <ul>
+                        <li><strong>API CustomFiles</strong> - Développement API PHP Symfony</li>
+                        <li><strong>Tests Unitaires</strong> - Implémentation PHPUnit</li>
+                        <li><strong>Maintenance évolutive</strong> - Corrections et améliorations</li>
+                        <li><strong>Intégration Continue</strong> - Mise en place CI/CD</li>
+                    </ul>
+                </div>
+                
+                <p class="note"><strong>Note :</strong> Ce tableau est régulièrement mis à jour avec les nouveaux projets et compétences acquises.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="container">
+        <nav class="section-nav">
+            <a href="#accueil">Accueil</a>
+            <a href="#competences">Compétences</a>
+            <a href="#veille">Veille</a>
+            <a href="#documentation">Stage</a>
+            <a href="#tableau">Tableau BTS</a>
+        </nav>
+        <h2 class="animated-title">Me Contacter</h2>
+        
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>📨 Restons en contact</h3>
+                <p>N'hésitez pas à me contacter pour toute opportunité professionnelle, ou question sur mes projets.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:lohan.poulain@etudiant.gastonberger.fr">lohanpou@yahoo.fr</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <h4>Localisation</h4>
+                            <p>Lille, Hauts-de-France</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-icon">🎓</span>
+                        <div>
+                            <h4>Formation</h4>
+                            <p>BTS SIO SLAM - Lycée Gaston Berger</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <h4>Réseaux professionnels</h4>
+                    <div class="social-buttons">
+                        <a href="https://www.linkedin.com/in/lohan-poulain-aa95bb328/" target="_blank" class="social-btn linkedin">
+                            <span>🔗</span> LinkedIn
+                        </a>
+                        <a href="https://github.com/LohanCode" target="_blank" class="social-btn github">
+                            <span>🐱</span> GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="availability">
+                    <h4>🟢 Disponibilité</h4>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <p>© 2025 Lohan Poulain - BTS SLAM</p>
     </footer>
@@ -215,20 +447,24 @@
     <script>
 
         document.addEventListener('DOMContentLoaded', () => {
-
-            const tabs = document.querySelectorAll('.tab');
-            const sections = document.querySelectorAll('.content-section');
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    tabs.forEach(t => t.classList.remove('active'));
-                    sections.forEach(section => section.classList.remove('active'));
-                    tab.classList.add('active');
-                    document.getElementById(tab.dataset.target).classList.add('active');
-                });
-            });
+            
+            // Génération des particules animées
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 20) + 's';
+                particle.style.animation = `float-up ${particle.style.animationDuration} linear infinite`;
+                particle.style.animationDelay = particle.style.animationDelay;
+                particlesContainer.appendChild(particle);
+            }
 
             const navs = document.querySelectorAll('.section-nav');
-            const sectionIds = ['accueil', 'projets', 'veille', 'documentation'];
+            const sectionIds = ['accueil', 'competences', 'veille', 'documentation', 'tableau'];
             const sectionElements = sectionIds.map(id => document.getElementById(id));
 
             function updateNavHighlight() {
