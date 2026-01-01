@@ -2823,49 +2823,41 @@ code {
 }
 
 
-/* Correction Responsive Mobile Optimisée */
+
+/* Correction Responsive Mobile Optimisée - Version Compacte */
 @media (max-width: 768px) {
 
-    /* Navigation défilable horizontalement au lieu de s'empiler */
+    /* Navigation compacte sur 2 lignes maximum */
     .section-nav {
         display: flex;
-        /* Force le flex */
-        flex-wrap: nowrap !important;
-        /* EMPÊCHE le retour à la ligne */
-        overflow-x: auto;
-        /* Active le défilement horizontal */
-        -webkit-overflow-scrolling: touch;
-        /* Défilement fluide sur iOS */
-        justify-content: flex-start;
-        /* Aligne au début */
-        gap: 8px;
-        /* Espacement réduit */
-        padding: 5px;
-        /* Un peu de marge interne */
-        white-space: nowrap;
-        /* Empêche le texte de se couper */
-        scrollbar-width: thin;
-        /* Scrollbar fine sur Firefox */
+        flex-wrap: wrap !important;
+        /* Permet le retour à la ligne */
+        justify-content: center;
+        /* Centre les boutons */
+        gap: 5px;
+        /* Petit espace entre les boutons */
+        padding: 0;
+        white-space: normal;
     }
 
-    /* Cache la barre de défilement sur Chrome/Safari/Opera (plus joli) */
     .section-nav::-webkit-scrollbar {
-        height: 4px;
-        background: transparent;
-    }
-
-    .section-nav::-webkit-scrollbar-thumb {
-        background: rgba(0, 224, 255, 0.3);
-        border-radius: 4px;
+        height: 0;
+        /* Cache scrollbar */
     }
 
     .section-nav a {
-        flex: 0 0 auto;
-        /* Empêche le bouton de s'écraser */
-        padding: 6px 12px;
-        font-size: 0.8rem;
-        margin: 0;
-        min-width: auto;
+        flex: 1 1 auto;
+        /* Permet aux boutons de s'adapter */
+        padding: 8px 10px;
+        /* Boutons plus fins */
+        font-size: 0.75rem;
+        /* Texte plus petit pour tout faire rentrer */
+        margin: 2px;
+        /* Marges réduites */
+        min-width: unset;
+        text-align: center;
+        line-height: 1;
+        /* Hauteur de ligne réduite */
     }
 
     /* Permettre aux blocs SLAM/SISR de s'empiler */
