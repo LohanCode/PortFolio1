@@ -2825,52 +2825,57 @@ code {
 
 
 /* Correction Responsive Mobile Optimisée - Version Compacte */
+
+/* Correction Responsive Mobile - Ligne Unique Forcée */
 @media (max-width: 768px) {
 
-    /* Navigation compacte sur 2 lignes maximum */
+    /* Navigation forcée sur UNE SEULE ligne de gauche à droite */
     .section-nav {
         display: flex;
-        flex-wrap: wrap !important;
-        /* Permet le retour à la ligne */
-        justify-content: center;
-        /* Centre les boutons */
-        gap: 5px;
-        /* Petit espace entre les boutons */
-        padding: 0;
-        white-space: normal;
+        flex-direction: row !important;
+        /* Force la direction ligne */
+        flex-wrap: nowrap !important;
+        /* INTERDIT le retour à la ligne */
+        justify-content: space-between;
+        /* Répartit l'espace disponible */
+        width: 100%;
+        padding: 0 2px;
+        overflow-x: hidden;
+        /* Pas de scroll si possible, sinon auto */
+        gap: 2px;
+        white-space: nowrap;
     }
 
     .section-nav::-webkit-scrollbar {
         height: 0;
-        /* Cache scrollbar */
     }
 
     .section-nav a {
         flex: 1 1 auto;
-        /* Permet aux boutons de s'adapter */
-        padding: 8px 10px;
-        /* Boutons plus fins */
-        font-size: 0.75rem;
-        /* Texte plus petit pour tout faire rentrer */
-        margin: 2px;
-        /* Marges réduites */
-        min-width: unset;
+        /* Extensible équitablement */
+        padding: 8px 1px;
+        /* Marges réduites au minimum */
+        font-size: 0.65rem;
+        /* Texte réduit pour tout faire rentrer */
+        margin: 0;
+        min-width: 0;
+        /* Permet de rétrécir en dessous du contenu si besoin */
         text-align: center;
-        line-height: 1;
-        /* Hauteur de ligne réduite */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: clip;
     }
 
-    /* Permettre aux blocs SLAM/SISR de s'empiler */
+    /* Permettre aux blocs SLAM/SISR de s'empiler normalement */
     div[style*="display: flex"] {
         flex-wrap: wrap !important;
     }
 
-    /* Conteneurs avec marges adaptées */
+    /* Conteneurs */
     .container,
     .hero-section {
-        width: 95% !important;
+        width: 96% !important;
         margin: 10px auto !important;
-        padding: 15px 10px !important;
-        overflow-x: hidden;
+        padding: 15px 5px !important;
     }
 }
