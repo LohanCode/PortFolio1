@@ -2822,15 +2822,63 @@ code {
     box-sizing: border-box;
 }
 
-/* Force le conteneur principal à ne pas déborder sur mobile uniquement */
+
+/* Correction Responsive Mobile Optimisée */
 @media (max-width: 768px) {
-    main {
-        overflow-x: hidden;
-        width: 100%;
+
+    /* Navigation défilable horizontalement au lieu de s'empiler */
+    .section-nav {
+        display: flex;
+        /* Force le flex */
+        flex-wrap: nowrap !important;
+        /* EMPÊCHE le retour à la ligne */
+        overflow-x: auto;
+        /* Active le défilement horizontal */
+        -webkit-overflow-scrolling: touch;
+        /* Défilement fluide sur iOS */
+        justify-content: flex-start;
+        /* Aligne au début */
+        gap: 8px;
+        /* Espacement réduit */
+        padding: 5px;
+        /* Un peu de marge interne */
+        white-space: nowrap;
+        /* Empêche le texte de se couper */
+        scrollbar-width: thin;
+        /* Scrollbar fine sur Firefox */
     }
 
+    /* Cache la barre de défilement sur Chrome/Safari/Opera (plus joli) */
+    .section-nav::-webkit-scrollbar {
+        height: 4px;
+        background: transparent;
+    }
+
+    .section-nav::-webkit-scrollbar-thumb {
+        background: rgba(0, 224, 255, 0.3);
+        border-radius: 4px;
+    }
+
+    .section-nav a {
+        flex: 0 0 auto;
+        /* Empêche le bouton de s'écraser */
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        margin: 0;
+        min-width: auto;
+    }
+
+    /* Permettre aux blocs SLAM/SISR de s'empiler */
+    div[style*="display: flex"] {
+        flex-wrap: wrap !important;
+    }
+
+    /* Conteneurs avec marges adaptées */
     .container,
-    section {
+    .hero-section {
+        width: 95% !important;
+        margin: 10px auto !important;
+        padding: 15px 10px !important;
         overflow-x: hidden;
     }
 }
