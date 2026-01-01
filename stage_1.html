@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 1ère Année - Lohan Poulain</title>
+    <meta name="description" content="Compte rendu et preuves de mon stage de première année">
+    <link rel="stylesheet" href="styles.css?v=3">
+</head>
+
+<body>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    <div class="particles" id="particles"></div>
+
+    <header>
+        <h1 class="animated-title">Stage 1ère Année</h1>
+        <nav class="section-nav" style="justify-content: center; margin-top: 20px;">
+            <a href="index.html#preuves">⬅️ Retour au Portfolio</a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <h2 class="animated-title">🏢 Réalisations en milieu professionnel en cours de première année</h2>
+
+        <div class="proof-item">
+            <div class="proof-image">
+
+                <img src="st1.jpg" alt="">
+            </div>
+            <div class="proof-content">
+                <h4>Realisation 1</h4>
+                <p>Desc 1</p>
+            </div>
+        </div>
+
+        <div class="proof-item">
+            <div class="proof-image">
+                <img src="" alt="">
+            </div>
+            <div class="proof-content">
+                <h4>Realisation 2</h4>
+                <p>Desc 2</p>
+            </div>
+        </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Lohan Poulain - BTS SIO SLAM</p>
+    </footer>
+
+    <div id="lightbox">
+        <span class="close-btn">&times;</span>
+        <img src="" alt="Zoom">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 40;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 20) + 's';
+                particle.style.animation = `float-up ${particle.style.animationDuration} linear infinite`;
+                particlesContainer.appendChild(particle);
+            }
+
+            // Script Lightbox
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            const closeBtn = lightbox.querySelector('.close-btn');
+            const proofImages = document.querySelectorAll('.proof-image img');
+
+            proofImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Empêche le scroll
+                });
+            });
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Réactive le scroll
+            };
+
+            closeBtn.addEventListener('click', closeLightbox);
+
+            // Fermer en cliquant en dehors de l'image
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            // Fermer avec la touche Echap
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

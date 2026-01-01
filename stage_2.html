@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 2ème Année - Bientôt</title>
+    <meta name="description" content="Stage de deuxième année à venir">
+    <link rel="stylesheet" href="styles.css?v=3">
+</head>
+
+<body>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    <div class="particles" id="particles"></div>
+
+    <header>
+        <h1 class="animated-title">Stage 2ème Année</h1>
+        <nav class="section-nav" style="justify-content: center; margin-top: 20px;">
+            <a href="index.html#preuves">⬅️ Retour au Portfolio</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section style="text-align: center; padding: 50px 20px;">
+            <div style="font-size: 5rem; margin-bottom: 20px;">🚧</div>
+            <h2 class="animated-title">En construction</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px; color: #ccc;">
+                Cette section sera disponible après la réalisation de mon stage de deuxième année.
+            </p>
+            <div
+                style="background: rgba(42, 42, 86, 0.3); padding: 20px; border-radius: 12px; display: inline-block; border: 1px solid rgba(0, 224, 255, 0.2);">
+                <p style="margin: 0; color: #00e0ff;">📅 Période prévue : Janvier - Février 2026</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Lohan Poulain - BTS SIO SLAM</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 40;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 20) + 's';
+                particle.style.animation = `float-up ${particle.style.animationDuration} linear infinite`;
+                particlesContainer.appendChild(particle);
+            }
+        });
+    </script>
+</body>
+
+</html>
