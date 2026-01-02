@@ -2758,21 +2758,41 @@ header h1::after {
 
 #lightbox.active {
     display: flex;
+    justify-content: center;
+    align-items: center;
     opacity: 1;
+    overflow: hidden;
+    /* Pas de scroll, on déplace l'image */
 }
 
 #lightbox img {
     max-width: 90%;
+    /* Taille par défaut : s'adapte à l'écran */
     max-height: 90%;
     border-radius: 8px;
     box-shadow: 0 0 30px rgba(0, 224, 255, 0.3);
     border: 2px solid #00e0ff;
     transform: scale(0.9);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.3s ease;
+    /* Transition douce pour le zoom */
+    cursor: zoom-in;
+    /* Change le curseur pour indiquer qu'on peut zoomer */
 }
 
 #lightbox.active img {
     transform: scale(1);
+}
+
+/* Classe pour le mode "Zoom Max" */
+#lightbox img.zoomed {
+    transform: scale(2.5);
+    /* Zoom puissant */
+    cursor: zoom-out;
+    /* On garde les contraintes de base, le scale fait le reste */
+    max-width: 90%;
+    max-height: 90%;
+    margin: 0;
+    min-width: auto;
 }
 
 #lightbox .close-btn {
