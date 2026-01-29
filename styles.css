@@ -1166,6 +1166,158 @@ h5 {
     background: linear-gradient(90deg, #00e0ff, transparent);
 }
 
+/* ===== SYSTÈME D'ONGLETS STAGES ===== */
+.stage-tabs-container {
+    margin-top: 30px;
+}
+
+.stage-tabs {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.stage-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 40px;
+    background: rgba(31, 31, 61, 0.6);
+    border: 2px solid rgba(0, 224, 255, 0.3);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #ccc;
+    font-family: inherit;
+}
+
+.stage-tab:hover {
+    background: rgba(0, 224, 255, 0.1);
+    border-color: rgba(0, 224, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+.stage-tab.active {
+    background: linear-gradient(135deg, rgba(0, 224, 255, 0.2), rgba(0, 184, 255, 0.1));
+    border-color: #00e0ff;
+    color: #fff;
+    box-shadow: 0 8px 25px rgba(0, 224, 255, 0.3);
+}
+
+.stage-tab .tab-icon {
+    font-size: 2rem;
+}
+
+.stage-tab .tab-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.stage-tab .tab-period {
+    font-size: 0.85rem;
+    padding: 4px 12px;
+    background: rgba(0, 224, 255, 0.2);
+    border-radius: 20px;
+    color: #00e0ff;
+}
+
+.stage-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.stage-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Grille pour compétences et missions */
+.stage-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.stage-detail-card {
+    background: rgba(31, 31, 61, 0.5);
+    border: 1px solid rgba(0, 224, 255, 0.2);
+    border-radius: 15px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.stage-detail-card:hover {
+    border-color: rgba(0, 224, 255, 0.5);
+    box-shadow: 0 5px 20px rgba(0, 224, 255, 0.15);
+    transform: translateY(-3px);
+}
+
+.stage-detail-card h5 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(0, 224, 255, 0.3);
+}
+
+.stage-detail-card h5::after {
+    display: none;
+}
+
+.stage-detail-card .detail-icon {
+    font-size: 1.3rem;
+}
+
+.stage-detail-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.stage-detail-card ul li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    color: #ccc;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stage-detail-card ul li:last-child {
+    border-bottom: none;
+}
+
+.stage-detail-card ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #00e0ff;
+}
+
+@media (max-width: 600px) {
+    .stage-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stage-tab {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .stage-details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Section BTS SIO intégrée dans hero */
 .bts-explanation {
     margin: 30px 0 20px 0;
