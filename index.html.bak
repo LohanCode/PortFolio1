@@ -267,38 +267,20 @@
                 </div>
 
                 <h2 class="section-title animated-title"><span>3.</span> Expérience Professionnelle</h2>
-                
-                <!-- Système d'onglets pour les stages -->
-                <div class="stage-tabs-container">
-                    <div class="stage-tabs">
-                        <button class="stage-tab active" onclick="showStage('stage1', this)">
-                            <span class="tab-icon">🏢</span>
-                            <span class="tab-text">Stage 1ère Année</span>
-                            <span class="tab-period">2025</span>
-                        </button>
-                        <button class="stage-tab" onclick="showStage('stage2', this)">
-                            <span class="tab-icon">🚀</span>
-                            <span class="tab-text">Stage 2ème Année</span>
-                            <span class="tab-period">2026</span>
-                        </button>
-                    </div>
-
-                    <!-- Stage 1ère année - NACON -->
-                    <div id="stage1" class="stage-content active">
-                        <div class="stage-section">
-                            <div class="company-presentation">
-                                <h3 class="company-name">NACON</h3>
-                                <h5>Contexte de l'entreprise</h5>
-                                <p><a href="https://www.nacongaming.com" class="school-link">Nacon</a> est une entreprise
-                                    française créée en <strong>octobre 2019</strong>, issue de la restructuration de
-                                    <br><strong><a href="https://www.bigben.fr" class="school-link">Bigben
-                                            Interactive</a></strong>
-                                    afin de regrouper sous une même marque ses activités liées au jeu vidéo. Son siège est basé
-                                    à <strong>Lesquin (Hauts-de-France).</strong>
-                                    Aujourd'hui, Nacon emploie plus de <strong>1 000 collaborateurs</strong> et est présente
-                                    dans plus de <strong>100 pays</strong>. L'entreprise a réalisé un
-                                    chiffre d'affaires de <strong>167,9 millions d'euros en 2025.</strong>
-                                </p>
+                <div class="stage-section">
+                    <div class="company-presentation">
+                        <h3 class="company-name">NACON</h3>
+                        <h5>Contexte de l'entreprise</h5>
+                        <p><a href="https://www.nacongaming.com" class="school-link">Nacon</a> est une entreprise
+                            française créée en <strong>octobre 2019</strong>, issue de la restructuration de
+                            <br><strong><a href="https://www.bigben.fr" class="school-link">Bigben
+                                    Interactive</a></strong>
+                            afin de regrouper sous une même marque ses activités liées au jeu vidéo. Son siège est basé
+                            à <strong>Lesquin (Hauts-de-France).</strong>
+                            Aujourd'hui, Nacon emploie plus de <strong>1 000 collaborateurs</strong> et est présente
+                            dans plus de <strong>100 pays</strong>. l'entreprise à réalisé
+                            chiffre d'affaires de <strong>167,9 millions d'euros en 2025.</strong>
+                        </p>
                         <h5>Position sur le marché</h5>
                         <p>Nacon occupe une place singulière dans l'industrie du <strong>gaming</strong>. Contrairement
                             aux grands éditeurs "AAA", elle s'oriente
@@ -341,125 +323,33 @@
 
 
 
-                                <div class="stage-details-grid">
-                                    <div class="stage-detail-card">
-                                        <h5><span class="detail-icon">🎯</span> Compétences acquises</h5>
-                                        <ul>
-                                            <li>Développement web avec des nouveaux langages</li>
-                                            <li>Travail en équipe et méthodes agiles</li>
-                                            <li>Tests unitaires</li>
-                                            <li>Auto-Formation Git/Docker</li>
-                                        </ul>
-                                    </div>
+                        <h5>Compétences acquises</h5>
+                        <ul style="text-align: left; margin: 15px 0; padding-left: 20px; color: #ccc;">
+                            <li>Développement web avec des nouveaux langages</li>
+                            <li>Travail en équipe et méthodes agiles</li>
+                            <li>Tests unitaires</li>
+                            <li>Auto-Formation Git/Docker</li>
 
-                                    <div class="stage-detail-card">
-                                        <h5><span class="detail-icon">📋</span> Missions réalisées</h5>
-                                        <ul>
-                                            <li>Configuration profil Github</li>
-                                            <li>Création projet PHP Symfony du début</li>
-                                            <li>Prise en charge d'un projet PHP Symfony Nacon</li>
-                                            <li>Correction de bug sur le projet Nacon</li>
-                                            <li>Mettre à jour des composer</li>
-                                            <li>Ticketing pour un customfiles en PHP sf</li>
-                                            <li>Mise en place du customfiles sous forme d'API</li>
-                                            <li>Se documenter sur les tests unitaires</li>
-                                            <li>Faire différents tests unitaires pour l'api</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        </ul>
 
-                    <!-- Stage 2ème année - NACON -->
-                    <div id="stage2" class="stage-content">
-                        <div class="stage-section">
-                            <div class="company-presentation">
-                                <h3 class="company-name">NACON</h3>
-                                <h5>Contexte de l'entreprise</h5>
-                                <p><a href="https://www.nacongaming.com" class="school-link">Nacon</a> est une entreprise
-                                    française créée en <strong>octobre 2019</strong>, issue de la restructuration de
-                                    <br><strong><a href="https://www.bigben.fr" class="school-link">Bigben
-                                            Interactive</a></strong>
-                                    afin de regrouper sous une même marque ses activités liées au jeu vidéo. Son siège est basé
-                                    à <strong>Lesquin (Hauts-de-France).</strong>
-                                    Aujourd'hui, Nacon emploie plus de <strong>1 000 collaborateurs</strong> et est présente
-                                    dans plus de <strong>100 pays</strong>. L'entreprise a réalisé un
-                                    chiffre d'affaires de <strong>167,9 millions d'euros en 2025.</strong>
-                                </p>
-                                <h5>Position sur le marché</h5>
-                                <p>Nacon occupe une place singulière dans l'industrie du <strong>gaming</strong>. Contrairement
-                                    aux grands éditeurs "AAA", elle s'oriente
-                                    vers des productions dites <strong>AA</strong>, qui allient une qualité technique solide et
-                                    des budgets plus raisonnables, permettant
-                                    de viser un public large. En parallèle, Nacon s'est imposée comme un acteur reconnu dans le
-                                    secteur des <strong>accessoires
-                                        gaming</strong> premium notamment grâce à ses manettes, casques, volants et
-                                    périphériques spécialisés.</p>
-                                <h5>Marques et produits phares</h5>
-                                <p><strong>Accessoires</strong> : manettes Revolution Unlimited Pro Controller, Daija Arcade
-                                    Stick, casque gaming, volants,
-                                    fauteuils de gamer...</p>
-                                <p><strong>Jeux vidéo</strong> : Pro Cycling Manager, Rugby 14, Tennis World Tour, Styx,
-                                    V-Rally, Paranoia, etc.</p>
-                                <p>Cette double activité (jeux + accessoires) fait de Nacon un acteur unique, capable
-                                    d'accompagner les joueurs à la fois
-                                    dans l'expérience logicielle et matérielle.</p>
-                                <h5>Organisation et méthode de travail</h5>
-                                <p>Nacon met en place des équipes <strong>pluridisciplinaires</strong> regroupant développeurs
-                                    back-end et front-end, designers UX/UI, testeurs,
-                                    chefs de projet et tech leads. L'organisation du travail repose en grande partie sur des
-                                    méthodes Agile, permettant de gérer
-                                    efficacement le cycle de développement des jeux et des plateformes numériques.
-                                </p>
-                                <h5>Mon rôle et mes missions lors du stage</h5>
-                                <p>Mon rôle dans l’équipe back-end de Nacon consistait à participer activement au développement et à la maintenance d’un projet sous PHP Symfony. J’ai collaboré avec des développeurs front-end, des UX/UI designers, des chefs de projet, des testeurs et des tech leads.
-                                    Mes missions incluaient notamment la réalisation de grosse Mise à jour Symfony et EasyAdmin et le suivi des tests avec la réparation des erreurs à corriger.
-                                </p>
+                        <h5>Missions réalisées</h5>
+                        <ul style="text-align: left; margin: 15px 0; padding-left: 20px; color: #ccc;">
+                            <li>Configuration profil Github</li>
+                            <li>Création projet PHP Symfony du début</li>
+                            <li>Prise en charge d'un projet PHP Symfony Nacon (Ajouter des images au projet)</li>
+                            <li>Correction de bug sur le projet Nacon</li>
+                            <li>Mettre à jour des composer</li>
+                            <li>Ticketing pour un customfiles en PHP sf</li>
+                            <li>Mise en place du customfiles sous forme d'API</li>
+                            <li>Se documenter sur les tests unitaires</li>
+                            <li>Faire différents tests unitaires pour l'api et régler des problèmes de dépréciations
+                            </li>
+                        </ul>
 
-                                <div class="stage-details-grid">
-                                    <div class="stage-detail-card">
-                                        <h5><span class="detail-icon">🎯</span> Compétences acquises</h5>
-                                        <ul>
-                                            <li>Mise à jour et maintenance d'applications Symfony existantes</li>
-                                            <li>Analyse et correction d'erreurs suite à des montées de versions</li>
-                                            <li>Tests fonctionnels et validation applicative</li>
-                                            <li>Intégration et exploitation d'API (Shoppingfeed)</li>
-                                            <li>Compréhension d'une base de code existante et amélioration</li>
-                                            <li>Lecture et exploitation de documentation technique (Wiki Bitbucket)</li>
-                                        </ul>
-                                    </div>
 
-                                    <div class="stage-detail-card">
-                                        <h5><span class="detail-icon">📋</span> Missions réalisées</h5>
-                                        <ul>
-                                            <li>Mise à jour du framework Symfony et du Bundle EasyAdmin</li>
-                                            <li>Identification et correction des erreurs liées aux mises à jour</li>
-                                            <li>Réalisation de tests fonctionnels sur l'ensemble du site</li>
-                                            <li>Manipulation et exploitation de l'API Shoppingfeed</li>
-                                            <li>Amélioration de la fiabilité et des performances du site</li>
-                                            <li>Création de commandes Symfony via exécutables via le terminal</li>
-                                            <li>Consultation et application des consignes du Wiki Bitbucket</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <p></p>
                     </div>
                 </div>
-
-                <script>
-                    function showStage(stageId, button) {
-                        document.querySelectorAll('.stage-content').forEach(content => {
-                            content.classList.remove('active');
-                        });
-                        document.querySelectorAll('.stage-tab').forEach(tab => {
-                            tab.classList.remove('active');
-                        });
-                        document.getElementById(stageId).classList.add('active');
-                        button.classList.add('active');
-                    }
-                </script>
             </div>
         </section>
     </main>
@@ -588,7 +478,7 @@
     </section>
 
     <footer>
-        <p>© 2026 Lohan Poulain - BTS SLAM</p>
+        <p>© 2025 Lohan Poulain - BTS SLAM</p>
     </footer>
 
     <script>
