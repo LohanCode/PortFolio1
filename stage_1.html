@@ -7,6 +7,10 @@
     <title>Stage 1ère Année - Lohan Poulain</title>
     <meta name="description" content="Compte rendu et preuves de mon stage de première année">
     <link rel="stylesheet" href="styles.css?v=3">
+    <!-- Prism.js pour coloration syntaxique -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-php.min.js"></script>
 </head>
 
 <body>
@@ -25,6 +29,8 @@
     <main class="container">
 
         <h2 class="animated-title">🏢 Réalisations en milieu professionnel au cours de première année</h2>
+
+        
 
         <!-- 1ère partie du stage -->
         <div class="proof-item" style="flex-direction: column; align-items: stretch;">
@@ -68,12 +74,12 @@
                     <div class="proof-image">
                         <img src="st1_3.jpg" alt="Description de l'image">
                     </div>
-                    <div class="proof-image">
-                        <img src="st1_4.jpg" alt="Description de l'image">
-                    </div>
+                    
                 </div>
             </div>
+
         </div>
+        
 
         <!-- 2ème partie du stage -->
         <div class="proof-item" style="flex-direction: column; align-items: stretch;">
@@ -110,16 +116,47 @@
                 </h5>
 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-
                     <div class="proof-image">
-                        <img src="st1_8.jpg" alt="Description de l'image">
+                        <img src="st1_4.jpg" alt="Description de l'image">
                     </div>
                     <div class="proof-image">
-                        <img src="st1_9.jpg" alt="Description de l'image">
+                        <img src="st1_14.jpg" alt="Description de l'image">
                     </div>
+                    
                 </div>
             </div>
+                        <!-- Bloc caché corrigé -->
+        <div style="margin: 30px 0; text-align: center;">
+            <button id="showSecretBtn2" style="background: #00e0ff; color: #222; border: none; border-radius: 8px; padding: 10px 22px; font-size: 1.1rem; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(0,224,255,0.15); transition: background 0.2s;">Afficher le code modifié pour le ticket</button>
+            <div id="secretText2" style="display: none; margin-top: 18px; background: #282a36; border-radius: 8px; padding: 18px; border-left: 3px solid #00e0ff;">
+                <pre style="margin:0;"><code class="language-php">
+if (null === $entityChangeSet['image'][1]) {
+    if ($translation->getImagePath()) {
+        $translation->setImage($entityChangeSet['image'][0]);
+    } else {
+        $translation->setImagePath(null);
+        $translation->setResizedImages([]);
+    }
+} else {
+    $translation->setImage($entityChangeSet['image'][1]);
+    $this->uploadToBucket($translation);
+}
+                </code></pre>
+            </div>
         </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var btn2 = document.getElementById('showSecretBtn2');
+                var secret2 = document.getElementById('secretText2');
+                btn2.addEventListener('click', function() {
+                    secret2.style.display = secret2.style.display === 'none' ? 'block' : 'none';
+                    btn2.textContent = secret2.style.display === 'block' ? 'Masquer le code modifié pour le ticket' : 'Afficher le code modifié pour le ticket';
+                });
+            });
+        </script>
+        </div>
+        
 
         <!-- 3ème partie du stage -->
         <div class="proof-item" style="flex-direction: column; align-items: stretch;">

@@ -354,13 +354,13 @@ h2:not(.slam-title):not(.sisr-title):hover::after {
 }
 
 .sisr-title {
-    margin: 0 0 10px 0 !important;
-    font-size: 1.5rem !important;
-    font-weight: bold !important;
-    color: #ffa500 !important;
-    animation: none !important;
-    border: none !important;
-    padding: 0 !important;
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffa500;
+    animation: none;
+    border: none;
+    padding: 0;
     pointer-events: none;
 }
 
