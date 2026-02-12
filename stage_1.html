@@ -14,6 +14,13 @@
 </head>
 
 <body>
+        <!-- Fenêtre modale pour afficher le code en grand -->
+        <div id="codeModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(20,22,34,0.98); align-items:center; justify-content:center;">
+            <div style="max-width:90vw; max-height:90vh; overflow:auto; background:#23243a; border-radius:12px; box-shadow:0 8px 32px #000a; padding:32px 24px 24px 24px; position:relative;">
+                <button id="closeCodeModal" style="position:absolute; top:18px; right:18px; background:#00e0ff; color:#23243a; border:none; border-radius:6px; font-size:1.2rem; font-weight:700; padding:6px 18px; cursor:pointer;">Fermer</button>
+                <pre id="modalCodeBlock" class="language-php" style="background:none; margin:0; font-size:1.1rem;"><code class="language-php"></code></pre>
+            </div>
+        </div>
     <div class="orb orb1"></div>
     <div class="orb orb2"></div>
     <div class="orb orb3"></div>
@@ -69,13 +76,130 @@
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
 
                     <div class="proof-image">
-                        <img src="st1_2.jpg" alt="Description de l'image">
+                        <img src="st1_15.jpg" alt="Description de l'image">
                     </div>
                     <div class="proof-image">
-                        <img src="st1_3.jpg" alt="Description de l'image">
+                        <img src="st1_11.jpg" alt="Description de l'image">
+                    </div>
+                    <div class="proof-image">
+                        <img src="st1_16.jpg" alt="Description de l'image">
                     </div>
                     
                 </div>
+                        <div style="margin: 30px 0; text-align: center;">
+                            <button id="showSecretBtn2-part1" style="background: #00e0ff; color: #222; border: none; border-radius: 8px; padding: 10px 22px; font-size: 1.1rem; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(0,224,255,0.15); transition: background 0.2s;">Afficher le code modifié pour le ticket</button>
+                            <div id="secretText2-part1" style="display: none; margin-top: 18px; background: #282a36; border-radius: 8px; padding: 18px; border-left: 3px solid #00e0ff;">
+                                <pre style="margin:0;"><code class="language-php">
+//Fichier migration
+&lt;?php
+
+declare(strict_types=1);
+
+namespace DoctrineMigrations;
+
+use Doctrine\DBAL\Schema\Schema;
+use Doctrine\Migrations\AbstractMigration;
+
+/**
+ * Auto-generated Migration: Please modify to your needs!
+ */
+final class Version20250613144413 extends AbstractMigration
+&#123;
+    public function getDescription(): string
+    &#123;
+        return '';
+    &#125;
+
+    public function up(Schema $schema): void
+    &#123;
+        // this up() migration is auto-generated, please modify it to your needs
+        $this-&gt;addSql(&lt;&lt;&lt;'SQL'
+            ALTER TABLE article ADD custom_fields JSON DEFAULT NULL
+        SQL);
+    &#125;
+
+    public function down(Schema $schema): void
+    &#123;
+        // this down() migration is auto-generated, please modify it to your needs
+        $this-&gt;addSql(&lt;&lt;&lt;'SQL'
+            ALTER TABLE article DROP custom_fields
+        SQL);
+    &#125;
+&#125;
+
+//Fichier ArticleCrudController.php
+
+use App\Field\ArticleTranslationField;
+use App\Field\ArticleTranslationImageField;
+use App\Form\ArticleTranslationType;
+use App\Form\Type\KeyValueType;
+use Doctrine\ORM\QueryBuilder;
+use EasyCorp\Bundle\EasyAdminBundle\Collection\FieldCollection;
+use EasyCorp\Bundle\EasyAdminBundle\Collection\FilterCollection;
+
+DateField::new('endPublicationAt'),
+            AssociationField::new('game')-&gt;setQueryBuilder($callableQueryBuilderGame),
+            ArticleTranslationImageField::new('articleTranslations', 'Image')-&gt;onlyOnDetail(),
+            CollectionField::new('CustomFields', 'Custom Fields')
+                -&gt;setEntryType(KeyValueType::class)
+                -&gt;hideOnIndex(),
+        ];
+    &#123;
+
+//Fichier Article.php
+
+#[Valid]
+    private Collection $articleTranslations;
+
+    #[ORM\Column(type: 'json', nullable: true)]
+    #[Groups('article:read')]
+    private ?array $customFields = [];
+
+    public function __construct()
+    &#123;
+        $this-&gt;platforms = new ArrayCollection();
+
+               return $this;
+    &#125;
+
+    #[Groups('article:read')]
+    public function getCustomFields(): ?array
+    &#123;
+        if (empty($this-&gt;customFields)) &#123;
+            return null;
+        &#125;
+
+        return $this-&gt;customFields;
+    &#125;
+
+    public function setCustomFields(?array $customFields): self
+    &#123;
+        $this-&gt;customFields = $customFields;
+
+        return $this;
+    &#125;
+&#125;
+
+//Fichier KeyValueType.php
+
+&lt;?php
+
+namespace App\Form\Type;
+
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\FormBuilderInterface;
+
+class KeyValueType extends AbstractType
+&#123;
+    public function buildForm(FormBuilderInterface $builder, array $options): void
+    &#123;
+        $builder
+            -&gt;add('name', TextType::class)
+            -&gt;add('value', TextType::class);
+    &#125;
+&#125;
+                </code></pre>
             </div>
 
         </div>
@@ -83,10 +207,8 @@
 
         <!-- 2ème partie du stage -->
         <div class="proof-item" style="flex-direction: column; align-items: stretch;">
-
             <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
                 <h4>Maintenance évolutive d'une application web en environnement professionnel</h4>
-
                 <div style="margin-top: 20px;">
                     <h5
                         style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
@@ -114,22 +236,20 @@
                     style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
                     📸 Preuves
                 </h5>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px;">
                     <div class="proof-image">
                         <img src="st1_4.jpg" alt="Description de l'image">
                     </div>
                     <div class="proof-image">
                         <img src="st1_14.jpg" alt="Description de l'image">
                     </div>
-                    
                 </div>
             </div>
-                        <!-- Bloc caché corrigé -->
-        <div style="margin: 30px 0; text-align: center;">
-            <button id="showSecretBtn2" style="background: #00e0ff; color: #222; border: none; border-radius: 8px; padding: 10px 22px; font-size: 1.1rem; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(0,224,255,0.15); transition: background 0.2s;">Afficher le code modifié pour le ticket</button>
-            <div id="secretText2" style="display: none; margin-top: 18px; background: #282a36; border-radius: 8px; padding: 18px; border-left: 3px solid #00e0ff;">
-                <pre style="margin:0;"><code class="language-php">
+        </div>
+    <div style="margin: 30px 0; text-align: center;">
+    <button id="showSecretBtn2-part2" style="background: #00e0ff; color: #222; border: none; border-radius: 8px; padding: 10px 22px; font-size: 1.1rem; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(0,224,255,0.15); transition: background 0.2s;">Afficher le code modifié pour le ticket</button>
+    <div id="secretText2-part2" style="display: none; margin-top: 18px; background: #282a36; border-radius: 8px; padding: 18px; border-left: 3px solid #00e0ff;">
+    <pre class="language-php" style="margin:0;"><code class="language-php">
 if (null === $entityChangeSet['image'][1]) {
     if ($translation->getImagePath()) {
         $translation->setImage($entityChangeSet['image'][0]);
@@ -145,16 +265,7 @@ if (null === $entityChangeSet['image'][1]) {
             </div>
         </div>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var btn2 = document.getElementById('showSecretBtn2');
-                var secret2 = document.getElementById('secretText2');
-                btn2.addEventListener('click', function() {
-                    secret2.style.display = secret2.style.display === 'none' ? 'block' : 'none';
-                    btn2.textContent = secret2.style.display === 'block' ? 'Masquer le code modifié pour le ticket' : 'Afficher le code modifié pour le ticket';
-                });
-            });
-        </script>
+        
         </div>
         
 
@@ -195,19 +306,228 @@ if (null === $entityChangeSet['image'][1]) {
 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
                     <div class="proof-image">
-                        <img src="st1_5.jpg" alt="Description de l'image">
+                        <img src="st1_17.jpg" alt="Description de l'image">
                     </div>
-                    <div class="proof-image">
-                        <img src="st1_6.jpg" alt="Description de l'image">
                     </div>
-                    <div class="proof-image">
-                        <img src="st1_7.jpg" alt="Description de l'image">
-                    </div>
-                </div>
             </div>
         </div>
 
-        <!-- 4ème partie du stage -->
+         <!-- 4ème partie du stage -->
+        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+
+            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                <h4>Mise à jour technique de PHP et du bundle EasyAdmin</h4>
+
+                <div style="margin-top: 20px;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétences mises en œuvre
+                    </h5>
+                    <div class="skill-list" style="flex-direction: column; gap: 15px;">
+                        <div class="skill-item-detailed" id="stage1-competence4">
+                            <span class="skill-tag">Répondre aux incidents et aux demandes d'assistance et évolution</span>
+                            <span class="skill-tag">Gérer le patrimoine informatique</span>
+                            <span class="skill-tag">Travailler en mode projet</span>
+                            <p
+                                style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                                Deux tickets m'ont été confiés afin de mettre à jour la version de PHP et celle de EasyAdmin, J'ai donc dû modifier plusieurs fichiers pour cela.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%;">
+                <h5
+                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    📸 Preuves
+                </h5>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div class="proof-image">
+                        <img src="st1_18.jpg" alt="Description de l'image">
+                    </div>
+                </div>
+                <div style="margin: 30px 0; text-align: center;">
+            <button id="showSecretBtn2-part4" style="background: #00e0ff; color: #222; border: none; border-radius: 8px; padding: 10px 22px; font-size: 1.1rem; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(0,224,255,0.15); transition: background 0.2s;">Afficher le code modifié pour le ticket</button>
+            <div id="secretText2-part4" style="display: none; margin-top: 18px; background: #282a36; border-radius: 8px; padding: 18px; border-left: 3px solid #00e0ff;">
+                <pre class="language-php" style="margin:0;"><code class="language-php">
+//Fichier bundles.php
+
+Symfony\UX\TwigComponent\TwigComponentBundle::class => ['all' => true],
+
+//Fichier twig.yaml
+
+twig_component:
+    anonymous_template_directory: 'components/'
+    defaults:
+        # Namespace & directory for components
+        App\Twig\Components\: 'components/'
+
+//Fichier AppFixtures.php
+
+&lt;?php
+
+namespace App\DataFixtures;
+
+use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Persistence\ObjectManager;
+
+class AppFixtures extends Fixture
+{
+    public function load(ObjectManager $manager): void
+    {
+        // $product = new Product();
+        // $manager->persist($product);
+
+        $manager->flush();
+    }
+}
+
+//Fichier ArticleFixtures.php
+
+use App\Entity\Game;
+use App\Entity\Locale;
+use App\Entity\Platform;
+use App\Entity\User;
+
+public function load(ObjectManager $manager): void
+
+&#123;
+        $datas = [
+            [
+                self::KEY_TITLE => 'Sortie WRC',
+                self::KEY_BODY => '<p>Le jeu sortira bientôt..</p>',
+                self::KEY_GAME => $this->getReference(GameFixtures::REF_GAME_WRC, Game::class),
+                self::KEY_AUTHOR => $this->getReference(UserFixtures::REF_USER_WRITER_KT, User::class),
+                self::KEY_LOCALE => $this->getReference(LocaleFixtures::LOCALE_FR_REFERENCE, Locale::class),
+                self::KEY_PLATFORMS => [
+                $this->getReference(PlatformFixtures::PLATFORM_PC_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_XBOX_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_PS4_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_PS5_REFERENCE, Platform::class),
+                ],
+            ],
+            [
+                self::KEY_TITLE => 'Sortie TDU',
+                self::KEY_BODY => '<p>Le jeu sortira bientôt..</p>',
+                self::KEY_GAME => $this->getReference(GameFixtures::REF_GAME_TDU, Game::class),
+                self::KEY_AUTHOR => $this->getReference(UserFixtures::REF_USER_WRITER_KT, User::class),
+                self::KEY_LOCALE => $this->getReference(LocaleFixtures::LOCALE_FR_REFERENCE, Locale::class),
+                self::KEY_PLATFORMS => [
+                $this->getReference(PlatformFixtures::PLATFORM_PC_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_XBOX_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_PS4_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_PS5_REFERENCE, Platform::class),
+                ],
+            ],
+            [
+                self::KEY_TITLE => 'Sortie GreedFall',
+                self::KEY_BODY => 'Le jeu sortira bientôt..',
+                self::KEY_GAME => $this->getReference(GameFixtures::REF_GAME_GREEDFALL, Game::class),
+                self::KEY_AUTHOR => $this->getReference(UserFixtures::REF_USER_WRITER_SPIDERS, User::class),
+                self::KEY_LOCALE => $this->getReference(LocaleFixtures::LOCALE_FR_REFERENCE, Locale::class),
+                self::KEY_PLATFORMS => [
+                $this->getReference(PlatformFixtures::PLATFORM_PC_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_XBOX_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_PS4_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_PS5_REFERENCE, Platform::class),
+                ],
+            ],
+            [
+                self::KEY_TITLE => 'Sortie TDF',
+                self::KEY_BODY => 'Le jeu sortira bientôt..',
+                self::KEY_GAME => $this->getReference(GameFixtures::REF_GAME_TDF, Game::class),
+                self::KEY_AUTHOR => $this->getReference(UserFixtures::REF_USER_WRITER_CYANIDE, User::class),
+                self::KEY_LOCALE => $this->getReference(LocaleFixtures::LOCALE_FR_REFERENCE, Locale::class),
+                self::KEY_PLATFORMS => [
+                $this->getReference(PlatformFixtures::PLATFORM_PC_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_XBOX_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_PS4_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_PS5_REFERENCE, Platform::class),
+                    self::KEY_GAME => $this->getReference(GameFixtures::REF_GAME_BB, Game::class),
+                self::KEY_AUTHOR => $this->getReference(UserFixtures::REF_USER_WRITER_CYANIDE, User::class),
+                self::KEY_LOCALE => $this->getReference(LocaleFixtures::LOCALE_FR_REFERENCE, Locale::class),
+                self::KEY_PLATFORMS => [
+                $this->getReference(PlatformFixtures::PLATFORM_PC_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_XBOX_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_PS4_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_PS5_REFERENCE, Platform::class),
+                ],
+            ],
+        ];
+
+//Fichier GameFixtures.php 
+
+use App\Entity\Studio;
+
+public function load(ObjectManager $manager): void
+&#123;
+        $datas = [
+            [
+                self::KEY_TITLE => 'WRC',
+                self::KEY_STUDIO => $this->getReference(StudioFixtures::REF_STUDIO_KT, Studio::class),
+                self::KEY_REFERENCE => self::REF_GAME_WRC,
+                self::KEY_CODE => 'wrc',
+            ],
+            [
+                self::KEY_TITLE => 'Test Drive Unlimited',
+                self::KEY_STUDIO => $this->getReference(StudioFixtures::REF_STUDIO_KT, Studio::class),
+                self::KEY_REFERENCE => self::REF_GAME_TDU,
+                self::KEY_CODE => 'tdu',
+            ],
+            [
+                self::KEY_TITLE => 'Greedfall',
+                self::KEY_STUDIO => $this->getReference(StudioFixtures::REF_STUDIO_SPIDERS, Studio::class),
+                self::KEY_REFERENCE => self::REF_GAME_GREEDFALL,
+                self::KEY_CODE => 'gf',
+            ],
+            [
+                self::KEY_TITLE => 'Tour de France 2023',
+                self::KEY_STUDIO => $this->getReference(StudioFixtures::REF_STUDIO_CYANIDE, Studio::class),
+                self::KEY_REFERENCE => self::REF_GAME_TDF,
+                self::KEY_CODE => 'tdf23',
+            ],
+            [
+                self::KEY_TITLE => 'BloodBowl',
+                self::KEY_STUDIO => $this->getReference(StudioFixtures::REF_STUDIO_CYANIDE, Studio::class),
+                self::KEY_REFERENCE => self::REF_GAME_BB,
+                self::KEY_CODE => 'bb',
+            ],
+
+//Fichier ArticleVoter.php 
+
+/** @var User $user */
+        $user = $this->security->getUser();
+        /** @var Article $subject */
+        if ($subject->getGame()) {
+            $studio = $subject->getGame()->getStudio();
+            $userStudioIsSameAsArticle = $user->hasStudio($studio);
+            $userIsAuthor = $this->articleTranslation->getAuthor() == $user;
+            $isGrantedArticleRead = $this->security->isGranted(User::ROLE_ADMIN)
+                || ($this->security->isGranted(User::ROLE_READER) && $userStudioIsSameAsArticle)
+            ;
+            $isGrantedArticleUpdate = $this->security->isGranted(User::ROLE_ADMIN)
+                || ($this->security->isGranted(User::ROLE_PRODUCER) && $userStudioIsSameAsArticle)
+                || ($this->security->isGranted(User::ROLE_WRITER) && $userStudioIsSameAsArticle && $userIsAuthor)
+            ;
+            $isGrantedArticleDelete = $this->security->isGranted(User::ROLE_ADMIN)
+                || ($this->security->isGranted(User::ROLE_PRODUCER) && $userStudioIsSameAsArticle)
+            ;
+
+            return match ($attribute) {
+                Article::ARTICLE_READ => $isGrantedArticleRead,
+                Article::ARTICLE_UPDATE => $isGrantedArticleUpdate,
+                Article::ARTICLE_DELETE => $isGrantedArticleDelete,
+                default => false,
+            };
+        }
+                </code></pre>
+            </div>
+        </div>
+
+
+
+        <!-- 5ème partie du stage -->
         <div class="proof-item" style="flex-direction: column; align-items: stretch;">
 
             <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
@@ -225,7 +545,7 @@ if (null === $entityChangeSet['image'][1]) {
                             <p
                                 style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
                                 Au cours de mon stage, j'ai renforcé mes compétences sur le framework Symfony ainsi que
-                                sur les outils de développement utilisés en entreprise. L'application web développée a permis
+                                sur les outils de développement utilisés en entreprise et les outils de collaboration. L'application web développée a permis
                                 à l'organisation de gérer des contenus et contribue à sa présence en ligne.
                             </p>
                         </div>
@@ -240,7 +560,7 @@ if (null === $entityChangeSet['image'][1]) {
 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
                     <div class="proof-image">
-                        <img src="st1_1.jpg" alt="Description de l'image">
+                        <img src="st1_2.jpg" alt="Description de l'image">
                     </div>
                 </div>
             </div>
@@ -258,6 +578,66 @@ if (null === $entityChangeSet['image'][1]) {
     </div>
 
     <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+                    var test = document.getElementById('test');
+                    var test2 = document.getElementById('test2');
+                    if (test && test2) {
+                        test.addEventListener('click', function() {
+                            if (test2.style.display === 'none') {
+                                test2.style.display = 'block';
+                                test.textContent = 'Masquer le code modifié pour le ticket';
+                            } else {
+                                test2.style.display = 'none';
+                                test.textContent = 'Afficher le code modifié pour le ticket';
+                            }
+                        });
+                    }
+                    // Fonction pour ouvrir le code en plein écran
+                    function openCodeModal(codeHtml) {
+                        const modal = document.getElementById('codeModal');
+                        const codeBlock = document.getElementById('modalCodeBlock').querySelector('code');
+                        codeBlock.innerHTML = codeHtml;
+                        modal.style.display = 'flex';
+                        Prism.highlightElement(codeBlock);
+                        document.body.style.overflow = 'hidden';
+                    }
+                    function closeCodeModal() {
+                        document.getElementById('codeModal').style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                    document.getElementById('closeCodeModal').onclick = closeCodeModal;
+                    // Partie 1
+                    var btn2p1 = document.getElementById('showSecretBtn2-part1');
+                    var secret2p1 = document.getElementById('secretText2-part1');
+                    if (btn2p1 && secret2p1) {
+                        btn2p1.addEventListener('click', function() {
+                            var code = secret2p1.querySelector('code').innerHTML;
+                            openCodeModal(code);
+                        });
+                    }
+                    // Partie 2
+                    var btn2p2 = document.getElementById('showSecretBtn2-part2');
+                    var secret2p2 = document.getElementById('secretText2-part2');
+                    if (btn2p2 && secret2p2) {
+                        btn2p2.addEventListener('click', function() {
+                            var code = secret2p2.querySelector('code').innerHTML;
+                            openCodeModal(code);
+                        });
+                    }
+                    // Partie 4
+                    var btn2p4 = document.getElementById('showSecretBtn2-part4');
+                    var secret2p4 = document.getElementById('secretText2-part4');
+                    if (btn2p4 && secret2p4) {
+                        btn2p4.addEventListener('click', function() {
+                            var code = secret2p4.querySelector('code').innerHTML;
+                            openCodeModal(code);
+                        });
+                    }
+            });
+
+
+
         document.addEventListener('DOMContentLoaded', () => {
             const particlesContainer = document.getElementById('particles');
             const particleCount = 40;
