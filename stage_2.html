@@ -7,6 +7,48 @@
     <title>Stage 2ème Année - Lohan Poulain</title>
     <meta name="description" content="Compte rendu et preuves de mon stage de deuxième année">
     <link rel="stylesheet" href="styles.css?v=3">
+    <style>
+        .competence-block {
+            background: rgba(0,224,255,0.07);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            padding: 10px 18px 10px 18px;
+            box-shadow: 0 2px 8px rgba(0,224,255,0.04);
+        }
+        .competence-title {
+            font-weight: 700;
+            color: #00e0ff;
+            font-size: 1.08rem;
+            margin-bottom: 4px;
+        }
+        .subskills-list {
+            margin: 0 0 0 18px;
+            padding: 0 0 0 12px;
+            color: #b6eaff;
+            font-size: 0.98rem;
+        }
+        .subskills-list li {
+            margin-bottom: 2px;
+        }
+    </style>
+    <style>
+        .container {
+            max-width: 1200px !important;
+            width: 96vw !important;
+            margin: 0 auto !important;
+        }
+        @media (max-width: 1300px) {
+            .container {
+                max-width: 98vw !important;
+            }
+        }
+        @media (max-width: 900px) {
+            .container {
+                max-width: 100vw !important;
+                padding: 0 2vw;
+            }
+        }
+    </style>
     <!-- Prism.js pour coloration syntaxique -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
@@ -100,29 +142,31 @@
 
             <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
                 <h4>Mise à jour technique du framework Symfony et du bundle EasyAdmin</h4>
-
                 <div style="margin-top: 20px;">
-                    <h5
-                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
-                        🛠️ Compétence mise en œuvre
+                    <h5 style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétences & sous-compétences mises en œuvre
                     </h5>
-                    <div class="skill-list" style="flex-direction: column; gap: 15px;">
-
-                        <div class="skill-item-detailed" id="stage2-competence1">
-                            <span class="skill-tag">Répondre aux incidences et aux demandes d'assistance et
-                                d'évolution</span>
-                            <span class="skill-tag">Gérer le patrimoine informatique</span>
-                            <span class="skill-tag">Travailler en mode projet</span>
-                            <p
-                                style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
-                                Un ticket m'a été confié afin de réaliser la mise à jour du framework Symfony et du
-                                bundle EasyAdmin vers leurs dernières versions stables.
-                                Cette évolution technique avait pour objectif d'améliorer la sécurité, les performances
-                                et la maintenabilité de l'application, tout en conservant
-                                l'ensemble de fonctionnalités existantes.
-                            </p>
-                        </div>
+                    <div class="competence-block">
+                        <div class="competence-title">Gérer le patrimoine informatique</div>
+                        <ul class="subskills-list">
+                            <li>Vérifier les conditions de la continuité d'un service informatique</li>
+                        </ul>
                     </div>
+                    <div class="competence-block">
+                        <div class="competence-title">Répondre aux incidents et aux demandes d'assistance et d'évolution</div>
+                        <ul class="subskills-list">
+                            <li>Traiter des demandes concernant les services réseau et système, applicatifs</li>
+                        </ul>
+                    </div>
+                    <div class="competence-block">
+                        <div class="competence-title">Travailler en mode projet</div>
+                        <ul class="subskills-list">
+                            <li>Analyser les objectifs et les modalités d'organisation d'un projet</li>
+                        </ul>
+                    </div>
+                    <p style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                        Un ticket m'a été confié afin de réaliser la mise à jour du framework Symfony et du bundle EasyAdmin vers leurs dernières versions stables. Cette évolution technique avait pour objectif d'améliorer la sécurité, les performances et la maintenabilité de l'application, tout en conservant l'ensemble de fonctionnalités existantes.
+                    </p>
                 </div>
             </div>
             <div style="width: 100%;">
@@ -148,27 +192,26 @@
 
             <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
                 <h4>Mise à jour de composants applicatifs et corrections des problèmes rencontrés</h4>
-
                 <div style="margin-top: 20px;">
-                    <h5
-                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
-                        🛠️ Compétence mise en œuvre
+                    <h5 style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétences & sous-compétences mises en œuvre
                     </h5>
-                    <div class="skill-list">
-                        <div class="skill-item-detailed" id="stage2-competence2">
-                            <span class="skill-tag">Gérer le patrimoine informatique</span>
-                            <span class="skill-tag">Répondre aux incidents et aux demandes d'assistance et
-                                d'évolution</span>
-                            <p
-                                style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
-                                Suite à la mise à jour de certains compossants applicatifs, des dysfonctionnements
-                                techniques sont apparus lors des phases de test.
-                                J'ai analysé l'impact de ces évolutions et apporté les corrections nécessaires afin de
-                                garantir la stabilité et le bon
-                                fonctionnement de l'application sans régression fonctionnelle.
-                            </p>
-                        </div>
+                    <div class="competence-block">
+                        <div class="competence-title">Gérer le patrimoine informatique</div>
+                        <ul class="subskills-list">
+                            <li>Exploiter des référentiels, normes et standards adoptés par le prestataire informatique</li>
+
+                        </ul>
                     </div>
+                    <div class="competence-block">
+                        <div class="competence-title">Répondre aux incidents et aux demandes d'assistance et d'évolution</div>
+                        <ul class="subskills-list">
+                            <li>Traiter des demandes concernant les applications</li>
+                        </ul>
+                    </div>
+                    <p style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                        Suite à la mise à jour de certains composants applicatifs, des dysfonctionnements techniques sont apparus lors des phases de test. J'ai analysé l'impact de ces évolutions et apporté les corrections nécessaires afin de garantir la stabilité et le bon fonctionnement de l'application sans régression fonctionnelle.
+                    </p>
                 </div>
             </div>
             <div style="width: 100%;">
@@ -198,26 +241,25 @@
 
             <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
                 <h4>Tests techniques et validations du fonctionnement du service</h4>
-
                 <div style="margin-top: 20px;">
-                    <h5
-                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
-                        🛠️ Compétence mise en œuvre
+                    <h5 style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétences & sous-compétences mises en œuvre
                     </h5>
-                    <div class="skill-list">
-                        <div class="skill-item-detailed" id="stage2-competence3">
-                            <span class="skill-tag">Mettre à disposition des utilisateurs un service informatique</span>
-                            <span class="skill-tag">Organiser son développement professionnel</span>
-
-                            <p
-                                style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
-                                Afin de garantir la qualité du service applicatif, j'ai réalisé des tests techniques.
-                                Ces tests m'ont permis de vérifier le bon fonctionnement de l'application et vérifier si
-                                elle était pleinement
-                                opérationnelle après les différentes interventions réalisées précedemments.
-                            </p>
-                        </div>
+                    <div class="competence-block">
+                        <div class="competence-title">Mettre à disposition des utilisateurs un service informatique</div>
+                        <ul class="subskills-list">
+                            <li>Réaliser les tests d'intégration et d'acceptation d'un service</li>
+                        </ul>
                     </div>
+                    <div class="competence-block">
+                        <div class="competence-title">Travailler en mode projet</div>
+                        <ul class="subskills-list">
+                            <li>Evaluer les indicateurs de suivi d'un projet et analyser les écarts</li>
+                        </ul>
+                    </div>
+                    <p style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                        Afin de garantir la qualité du service applicatif, j'ai réalisé des tests techniques. Ces tests m'ont permis de vérifier le bon fonctionnement de l'application et vérifier si elle était pleinement opérationnelle après les différentes interventions réalisées précédemment.
+                    </p>
                 </div>
             </div>
             <div style="width: 100%;">
@@ -244,29 +286,24 @@
             </div>
         </div>
 
-        <!-- 4ème partie du stage -->
+        <!-- 4ème partie du stage 
         <div class="proof-item" style="flex-direction: column; align-items: stretch;">
 
             <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
                 <h4>Utilisation et test d'une API métier</h4>
-
                 <div style="margin-top: 20px;">
-                    <h5
-                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
-                        🛠️ Compétence mise en œuvre
+                    <h5 style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétences & sous-compétences mises en œuvre
                     </h5>
-                    <div class="skill-list">
-                        <div class="skill-item-detailed">
-                            <span class="skill-tag">Mettre à disposition des utilisateurs un service informatique</span>
-                            <p
-                                style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
-                                J'ai utilisé l'outil Postman afin de tester une API pour l'import de commande dans
-                                l'application.
-                                Ces tests m'ont permis de vérifier la validité des échanges de données et de confirmer
-                                le bon fonctionnement de l'API.
-                            </p>
-                        </div>
+                    <div class="competence-block">
+                        <div class="competence-title">Mettre à disposition des utilisateurs un service informatique</div>
+                        <ul class="subskills-list">
+                            <li>Réaliser les tests d'intégration et d'acceptation d'un service</li>
+                        </ul>
                     </div>
+                    <p style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                        J'ai utilisé l'outil Postman afin de tester une API pour l'import de commande dans l'application. Ces tests m'ont permis de vérifier la validité des échanges de données et de confirmer le bon fonctionnement de l'API.
+                    </p>
                 </div>
             </div>
             <div style="width: 100%;">
@@ -286,27 +323,38 @@
                 </div>
             </div>
         </div>
-
+    -->
         <!-- 5ème partie du stage -->
         <div class="proof-item" style="flex-direction: column; align-items: stretch;">
             <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
                 <h4>Correction de divers problèmes techniques</h4>
-
                 <div style="margin-top: 20px;">
-                    <h5
-                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
-                        🛠️ Compétence mise en œuvre
+                    <h5 style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétences & sous-compétences mises en œuvre
                     </h5>
-                    <div class="skill-list">
-                        <div class="skill-item-detailed">
-                            <span class="skill-tag">Mettre à disposition des utilisateurs un service informatique</span>
-                            <p
-                                style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
-                                J'ai été disposé à résoudre deux tickets pour corriger divers problèmes techniques qu'il
-                                y avait déjà auparavent sur le site.
-                            </p>
-                        </div>
+                    <div class="competence-block">
+                        <div class="competence-title">Répondre aux incidents et aux demandes d'assistance et d'évolution</div>
+                        <ul class="subskills-list">
+                            <li>Traiter des demandes concernant les applications</li>
+                        </ul>
                     </div>
+                    <div class="competence-block">
+                        <div class="competence-title">Mettre à disposition des utilisateurs un service informatique</div>
+                        <ul class="subskills-list">
+                            <li>Accompagner les utilisateurs dans la mise en place d'un service</li>
+                        </ul>
+                    </div>
+                    <div class="competence-block">
+                        <div class="competence-title">Développer la présence en ligne de l'organisation</div>
+                        <ul class="subskills-list">
+                            <li>Participer à la valorisation de l'image de l'organisation sur les médias numériques
+                                en tenant compte du cadre juridique et des enjeux économiques
+                            </li>
+                        </ul>
+                    </div>
+                    <p style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                        J'ai été disposé à résoudre deux tickets pour corriger divers problèmes techniques qu'il y avait déjà auparavant sur le site.
+                    </p>
                 </div>
             </div>
 
