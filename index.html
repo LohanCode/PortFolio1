@@ -14,6 +14,70 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <title>Portfolio de Lohan Poulain - BTS SIO SLAM</title>
     <meta name="description" content="Découvrez mon parcours, mes projets et mes compétences en BTS SIO option SLAM.">
     <link rel="stylesheet" href="styles.css?v=3">
+    <style>
+        .quick-nav {
+            position: fixed;
+            right: 16px;
+            top: 94px;
+            z-index: 1200;
+            border-radius: 12px;
+            padding: 8px;
+            background: rgba(20, 22, 34, 0.84);
+            border: 1px solid rgba(0, 224, 255, 0.3);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(6px);
+        }
+
+        .quick-nav h4 {
+            margin: 0 0 8px 0;
+            font-size: 0.85rem;
+            color: #9eefff;
+            text-align: center;
+        }
+
+        .quick-nav .quick-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .quick-nav .quick-item {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 224, 255, 0.35);
+            background: rgba(0, 224, 255, 0.12);
+            color: #d8f7ff;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #documentation,
+        #preuves,
+        #competences,
+        #veille {
+            scroll-margin-top: 18px;
+        }
+
+        @media (max-width: 1024px) {
+            .quick-nav {
+                right: 8px;
+                top: auto;
+                bottom: 10px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .quick-nav h4 {
+                margin: 0;
+            }
+
+            .quick-nav .quick-list {
+                flex-direction: row;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -31,6 +95,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <header>
         <h1 class="animated-title" data-text="Bienvenue sur mon Portfolio">Bienvenue sur mon Portfolio</h1>
     </header>
+
+    <aside class="quick-nav" aria-label="Raccourcis oral">
+        <h4>Oral</h4>
+        <div class="quick-list">
+            <button type="button" class="quick-item" data-step="1" title="Etape 1">1</button>
+            <button type="button" class="quick-item" data-step="2" title="Etape 2">2</button>
+            <button type="button" class="quick-item" data-step="3" title="Etape 3">3</button>
+            <button type="button" class="quick-item" data-step="4" title="Etape 4">4</button>
+            <button type="button" class="quick-item" data-step="5" title="Etape 5 - Veille">5</button>
+        </div>
+    </aside>
 
     <section id="accueil" class="hero-section">
         <h1 class="animated-title">Bonjour, je suis Lohan Poulain</h1>
@@ -63,10 +138,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <div class="cta-buttons">
-            <a href="#competences" class="cta-button">Mes compétences</a>
-            <a href="#veille" class="cta-button">Ma veille techno</a>
-            <a href="#documentation" class="cta-button">Mon stage</a>
-            <a href="#tableau" class="cta-button">Tableau BTS</a>
+            <a href="#accueil" class="cta-button">Présentation perso</a>
+            <a href="#documentation" class="cta-button">Expérience</a>
+            <a href="#preuves" class="cta-button">Réalisations pro</a>
+            <a href="#competences" class="cta-button">Compétences</a>
+            <a href="#veille" class="cta-button">Veille</a>
         </div>
     </section>
 
@@ -75,10 +151,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <section id="competences" class="container">
             <nav class="section-nav">
                 <a href="#accueil">Accueil</a>
+                <a href="#documentation">Expérience</a>
+                <a href="#preuves">Réalisations</a>
                 <a href="#competences">Compétences</a>
                 <a href="#veille">Veille</a>
-                <a href="#documentation">Stage</a>
-                <a href="#tableau">Tableau BTS</a>
             </nav>
             <h2 class="animated-title">Mes Compétences Techniques</h2>
 
@@ -144,10 +220,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <h2 class="section-title">💡 Veille Technologique</h2>
             <nav class="section-nav">
                 <a href="#accueil">Accueil</a>
+                <a href="#documentation">Expérience</a>
+                <a href="#preuves">Réalisations</a>
                 <a href="#competences">Compétences</a>
-                <a href="#veille" class="active">Veille</a>
-                <a href="#documentation">Stage</a>
-                <a href="#tableau">Tableau BTS</a>
+                <a href="#veille">Veille</a>
             </nav>
 
             <div class="veille-intro" style="margin-bottom: 40px;">
@@ -235,8 +311,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
             </div>
-
-            <div class="veille-preuves" style="margin: 40px 0; text-align: center;">
         </section>
 
         <!-- Section Documentation & Stage -->
@@ -244,10 +318,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <h2 class="section-title">📁 Documentation & Stage</h2>
             <nav class="section-nav">
                 <a href="#accueil">Accueil</a>
+                <a href="#documentation">Expérience</a>
+                <a href="#preuves">Réalisations</a>
                 <a href="#competences">Compétences</a>
                 <a href="#veille">Veille</a>
-                <a href="#documentation" class="active">Stage</a>
-                <a href="#tableau">Tableau BTS</a>
             </nav>
             <h2 class="animated-title" style="display: block; margin-bottom: 10px;">Mon expérience pro</h2>
 
@@ -300,12 +374,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <!-- Système d'onglets pour les stages -->
                 <div class="stage-tabs-container">
                     <div class="stage-tabs">
-                        <button class="stage-tab active" onclick="showStage('stage1', this)">
+                        <button id="tab-stage1" class="stage-tab active" onclick="showStage('stage1', this)">
                             <span class="tab-icon">🏢</span>
                             <span class="tab-text">Stage 1ère Année</span>
                             <span class="tab-period">2025</span>
                         </button>
-                        <button class="stage-tab" onclick="showStage('stage2', this)">
+                        <button id="tab-stage2" class="stage-tab" onclick="showStage('stage2', this)">
                             <span class="tab-icon">🚀</span>
                             <span class="tab-text">Stage 2ème Année</span>
                             <span class="tab-period">2026</span>
@@ -315,7 +389,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <!-- Stage 1ère année - NACON -->
                     <div id="stage1" class="stage-content active">
                         <div class="stage-section">
-                            <div class="company-presentation">
+                            <div id="entreprise-stage1" class="company-presentation">
                                 <h3 class="company-name">NACON</h3>
                                 <h5>Contexte de l'entreprise</h5>
                                 <p><a href="https://www.nacongaming.com" class="school-link">Nacon</a> est une
@@ -414,7 +488,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <!-- Stage 2ème année - NACON -->
                     <div id="stage2" class="stage-content">
                         <div class="stage-section">
-                            <div class="company-presentation">
+                            <div id="entreprise-stage2" class="company-presentation">
                                 <h3 class="company-name">NACON</h3>
                                 <h5>Contexte de l'entreprise</h5>
                                 <p><a href="https://www.nacongaming.com" class="school-link">Nacon</a> est une
@@ -520,10 +594,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section id="tableau" class="container">
         <nav class="section-nav">
             <a href="#accueil">Accueil</a>
+            <a href="#documentation">Expérience</a>
+            <a href="#preuves">Réalisations</a>
             <a href="#competences">Compétences</a>
             <a href="#veille">Veille</a>
-            <a href="#documentation">Stage</a>
-            <a href="#tableau">Tableau BTS</a>
         </nav>
         <h2 class="animated-title">Tableau de Synthèse BTS SIO</h2>
 
@@ -581,10 +655,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section id="contact" class="container">
         <nav class="section-nav">
             <a href="#accueil">Accueil</a>
-            <a href="#competences">Compétences</a>
+            <a href="#documentation">Expérience</a>
+            <a href="#preuves">Réalisations</a>
+            <a href="#competences">Portfolio</a>
             <a href="#veille">Veille</a>
-            <a href="#documentation">Stage</a>
-            <a href="#tableau">Tableau BTS</a>
         </nav>
         <h2 class="animated-title">Me Contacter</h2>
 
@@ -663,36 +737,83 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 particlesContainer.appendChild(particle);
             }
 
-            const navs = document.querySelectorAll('.section-nav');
-            const sectionIds = ['accueil', 'competences', 'veille', 'documentation', 'tableau'];
-            const sectionElements = sectionIds.map(id => document.getElementById(id));
+            // Reordonne les sections selon le fil oral: perso -> entreprise -> realisations -> portfolio -> veille/ouverture.
+            const main = document.querySelector('main');
+            const sectionDocumentation = document.getElementById('documentation');
+            const sectionTableau = document.getElementById('tableau');
+            const sectionCompetences = document.getElementById('competences');
+            const sectionVeille = document.getElementById('veille');
 
-            function updateNavHighlight() {
-                let index = 0;
-                const scrollY = window.scrollY + window.innerHeight / 3;
-                sectionElements.forEach((section, i) => {
-                    if (section && section.offsetTop <= scrollY) {
-                        index = i;
-                    }
-                });
-                navs.forEach(nav => {
-                    nav.querySelectorAll('a').forEach((a, i) => {
-                        if (i === index) {
-                            a.classList.add('active');
-                        } else {
-                            a.classList.remove('active');
-                        }
-                    });
-                });
+            if (main && sectionDocumentation && sectionTableau && sectionCompetences && sectionVeille) {
+                main.insertBefore(sectionDocumentation, main.firstChild);
+                main.insertBefore(sectionTableau, sectionCompetences);
+                main.appendChild(sectionCompetences);
+                main.appendChild(sectionVeille);
             }
-
-            window.addEventListener('scroll', updateNavHighlight);
-            updateNavHighlight();
 
             if (window.location.hash) {
                 history.replaceState(null, null, ' ');
                 window.scrollTo(0, 0);
             }
+
+            const stepActions = {
+                1: () => {
+                    scrollToTarget('accueil');
+                },
+                2: () => {
+                    openStageAndScroll('stage1', 'documentation');
+                },
+                3: () => {
+                    scrollToTarget('preuves');
+                },
+                4: () => {
+                    scrollToTarget('competences');
+                },
+                5: () => {
+                    scrollToTarget('veille');
+                }
+            };
+
+            function scrollToTarget(targetId) {
+                const target = document.getElementById(targetId);
+                if (!target) return;
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            function openStageAndScroll(stageId, targetId) {
+                const tabButton = document.getElementById(stageId === 'stage2' ? 'tab-stage2' : 'tab-stage1');
+                if (tabButton) {
+                    showStage(stageId, tabButton);
+                }
+                scrollToTarget('documentation');
+                window.setTimeout(() => {
+                    scrollToTarget(targetId);
+                }, 300);
+            }
+
+            document.querySelectorAll('[data-step]').forEach((element) => {
+                element.addEventListener('click', () => {
+                    const step = Number(element.getAttribute('data-step'));
+                    if (stepActions[step]) {
+                        stepActions[step]();
+                    }
+                });
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.ctrlKey || event.altKey || event.metaKey) return;
+                const active = document.activeElement;
+                const tagName = active ? active.tagName.toLowerCase() : '';
+                if (tagName === 'input' || tagName === 'textarea') return;
+
+                if (event.key >= '1' && event.key <= '5') {
+                    const step = Number(event.key);
+                    if (stepActions[step]) {
+                        event.preventDefault();
+                        stepActions[step]();
+                    }
+                }
+            });
         });
 
         async function downloadCVFile() {

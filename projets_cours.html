@@ -32,6 +32,40 @@
         }
     </style>
     <style>
+        .competence-card-link {
+            cursor: pointer;
+            border: 1px solid rgba(0, 224, 255, 0.15);
+            border-radius: 10px;
+            padding: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .competence-card-link:hover,
+        .competence-card-link:focus {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(0, 224, 255, 0.14);
+            border-color: rgba(0, 224, 255, 0.35);
+            outline: none;
+        }
+
+        .competence-card-link::after {
+            content: 'Cliquer pour ouvrir les preuves et le tableau detaille';
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.86rem;
+            color: #d8f6ff;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(0, 224, 255, 0.14);
+        }
+
+        .competence-return-focus {
+            box-shadow: 0 0 0 3px rgba(0, 224, 255, 0.6), 0 10px 24px rgba(0, 224, 255, 0.25);
+            border-color: rgba(0, 224, 255, 0.65) !important;
+            transition: box-shadow 0.35s ease;
+        }
+    </style>
+    <style>
         .container {
             max-width: 1200px !important;
             width: 96vw !important;
@@ -340,6 +374,97 @@ Notre groupe a donc décidé de se penché sur le thème du GreenIT et de la ré
                 if (e.key === 'Escape' && lightbox.classList.contains('active')) {
                     closeLightbox();
                 }
+            });
+
+            const sourcePage = window.location.pathname.split('/').pop() || 'projets_cours.html';
+            const interactiveContents = document.querySelectorAll('.proof-item .proof-content');
+            const contentsArray = Array.from(interactiveContents);
+
+            const currentHash = window.location.hash ? decodeURIComponent(window.location.hash.slice(1)) : '';
+
+            const buildPayload = (content) => {
+                const realisation = content.querySelector('h4')?.textContent.trim() || 'Realisation';
+                const competences = Array.from(content.querySelectorAll('.competence-block')).map((block) => {
+                    const title = block.querySelector('.competence-title')?.textContent.trim() || 'Competence';
+                    const subskills = Array.from(block.querySelectorAll('li')).map((item) => item.textContent.trim()).filter(Boolean);
+                    return { title, subskills };
+                });
+
+                const currentIndex = contentsArray.indexOf(content);
+                const nextContent = currentIndex >= 0 ? contentsArray[currentIndex + 1] : null;
+
+                const images = Array.from(document.querySelectorAll('.proof-image img'))
+                    .filter((img) => {
+                        const isAfterCurrent = Boolean(content.compareDocumentPosition(img) & Node.DOCUMENT_POSITION_FOLLOWING);
+                        if (!isAfterCurrent) {
+                            return false;
+                        }
+
+                        if (!nextContent) {
+                            return true;
+                        }
+
+                        const isBeforeNextContent = Boolean(img.compareDocumentPosition(nextContent) & Node.DOCUMENT_POSITION_FOLLOWING);
+                        return isBeforeNextContent;
+                    })
+                    .map((img) => img.getAttribute('src') ? img.getAttribute('src').trim() : '')
+                    .filter(Boolean);
+
+                const uniqueImages = Array.from(new Set(images));
+
+                const sourceWithAnchor = sourcePage + '#' + encodeURIComponent(content.id);
+
+                const payload = {
+                    sourcePage: sourceWithAnchor,
+                    realisation,
+                    competences,
+                    images: uniqueImages
+                };
+
+                return payload;
+            };
+
+            const openDetailPage = (content) => {
+                const payload = buildPayload(content);
+                sessionStorage.setItem('competenceDetailData', JSON.stringify(payload));
+                window.location.href = 'competence_details.html';
+            };
+
+            interactiveContents.forEach((content, index) => {
+                const parentProof = content.closest('.proof-item');
+                if (!parentProof) {
+                    return;
+                }
+
+                if (!content.id) {
+                    content.id = 'competence-projets-' + (index + 1);
+                }
+
+                content.classList.add('competence-card-link');
+                content.setAttribute('role', 'button');
+                content.setAttribute('tabindex', '0');
+
+                if (currentHash && content.id === currentHash) {
+                    setTimeout(() => {
+                        content.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        content.classList.add('competence-return-focus');
+                        setTimeout(() => content.classList.remove('competence-return-focus'), 2200);
+                    }, 80);
+                }
+
+                content.addEventListener('click', (event) => {
+                    if (event.target.closest('a, button, input, select, textarea, label')) {
+                        return;
+                    }
+                    openDetailPage(content);
+                });
+
+                content.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        openDetailPage(content);
+                    }
+                });
             });
         });
     </script>
