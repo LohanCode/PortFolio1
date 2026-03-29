@@ -17,11 +17,13 @@
             width: 96vw !important;
             margin: 0 auto !important;
         }
+
         @media (max-width: 1300px) {
             .container {
                 max-width: 98vw !important;
             }
         }
+
         @media (max-width: 900px) {
             .container {
                 max-width: 100vw !important;
@@ -36,6 +38,7 @@
             height: auto;
             margin: 0 auto;
         }
+
         .proof-image {
             display: flex;
             align-items: center;
@@ -43,6 +46,7 @@
             background: none;
             box-shadow: none;
         }
+
         /* Forcer la grille à 2 colonnes pour cette section si besoin */
         .proof-images-row {
             display: grid !important;
@@ -52,24 +56,27 @@
     </style>
     <style>
         .competence-block {
-            background: rgba(0,224,255,0.07);
+            background: rgba(0, 224, 255, 0.07);
             border-radius: 8px;
             margin-bottom: 12px;
             padding: 10px 18px 10px 18px;
-            box-shadow: 0 2px 8px rgba(0,224,255,0.04);
+            box-shadow: 0 2px 8px rgba(0, 224, 255, 0.04);
         }
+
         .competence-title {
             font-weight: 700;
             color: #00e0ff;
             font-size: 1.08rem;
             margin-bottom: 4px;
         }
+
         .subskills-list {
             margin: 0 0 0 18px;
             padding: 0 0 0 12px;
             color: #b6eaff;
             font-size: 0.98rem;
         }
+
         .subskills-list li {
             margin-bottom: 2px;
         }
@@ -111,13 +118,17 @@
 </head>
 
 <body>
-        <!-- Fenêtre modale pour afficher le code en grand -->
-        <div id="codeModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(20,22,34,0.98); align-items:center; justify-content:center;">
-            <div style="max-width:90vw; max-height:90vh; overflow:auto; background:#23243a; border-radius:12px; box-shadow:0 8px 32px #000a; padding:32px 24px 24px 24px; position:relative;">
-                <button id="closeCodeModal" style="position:absolute; top:18px; right:18px; background:#00e0ff; color:#23243a; border:none; border-radius:6px; font-size:1.2rem; font-weight:700; padding:6px 18px; cursor:pointer;">Fermer</button>
-                <pre id="modalCodeBlock" class="language-php" style="background:none; margin:0; font-size:1.1rem;"><code class="language-php"></code></pre>
-            </div>
+    <!-- Fenêtre modale pour afficher le code en grand -->
+    <div id="codeModal"
+        style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(20,22,34,0.98); align-items:center; justify-content:center;">
+        <div
+            style="max-width:90vw; max-height:90vh; overflow:auto; background:#23243a; border-radius:12px; box-shadow:0 8px 32px #000a; padding:32px 24px 24px 24px; position:relative;">
+            <button id="closeCodeModal"
+                style="position:absolute; top:18px; right:18px; background:#00e0ff; color:#23243a; border:none; border-radius:6px; font-size:1.2rem; font-weight:700; padding:6px 18px; cursor:pointer;">Fermer</button>
+            <pre id="modalCodeBlock" class="language-php"
+                style="background:none; margin:0; font-size:1.1rem;"><code class="language-php"></code></pre>
         </div>
+    </div>
     <div class="orb orb1"></div>
     <div class="orb orb2"></div>
     <div class="orb orb3"></div>
@@ -135,7 +146,8 @@
         <h2 class="animated-title">🏢 Réalisations en milieu professionnel au cours de la première année</h2>
 
         <!-- Section Outils Utilisés -->
-        <section class="tools-used" style="margin: 18px 0 12px 0; background: rgba(20,22,34,0.07); border-radius: 8px; padding: 8px 16px;">
+        <section class="tools-used"
+            style="margin: 18px 0 12px 0; background: rgba(20,22,34,0.07); border-radius: 8px; padding: 8px 16px;">
             <strong style="display:block; margin-bottom:6px;">Outils utilisés :</strong>
             <ul style="display: block; list-style: none; margin: 0; padding: 0;">
                 <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
@@ -158,20 +170,22 @@
                         <img src="docker.png" alt="Docker" style="width:32px;height:32px;object-fit:contain;">
                         <span style="font-weight:600;">Docker</span>
                     </span>
-                    <span style="color:#888; flex:1;">Plateforme de conteneurisation afin d'empaqueter des logiciels dans des conteneurs et les exécuter sur des machines cibles</span>
+                    <span style="color:#888; flex:1;">Plateforme de conteneurisation afin d'empaqueter des logiciels
+                        dans des conteneurs et les exécuter sur des machines cibles</span>
                 </li>
                 <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
                     <span style="display: flex; align-items: center; gap: 8px; white-space: nowrap;">
                         <img src="git.png" alt="Git" style="width:32px;height:32px;object-fit:contain;">
                         <span style="font-weight:600;">Git</span>
                     </span>
-                    <span style="color:#888; flex:1;">Système logiciei de contrôle de version distribué permettant de gérer les versions de code source ou de données</span>
+                    <span style="color:#888; flex:1;">Système logiciei de contrôle de version distribué permettant de
+                        gérer les versions de code source ou de données</span>
                 </li>
                 <!-- Ajoute ici d'autres outils -->
             </ul>
         </section>
 
-        
+
 
         <!-- 1ère partie du stage -->
         <div class="proof-item" style="flex-direction: column; align-items: stretch;">
@@ -179,16 +193,19 @@
             <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
                 <h4>Développement de nouvelles fonctionnalités métier sur une application web existante</h4>
                 <div style="margin-top: 20px;">
-                    <h5 style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
                         🛠️ Compétences & sous-compétences mises en œuvre
                     </h5>
-                    <div class="competence-block">
-                        <div class="competence-title">Répondre aux incidents et aux demandes d'assistance et d'évolution</div>
+                    <div class="competence-block" data-images="st1_15.jpg,st1_16.jpg"
+                        data-tools="Jira,Bitbucket,VS Code">
+                        <div class="competence-title">Répondre aux incidents et aux demandes d'assistance et d'évolution
+                        </div>
                         <ul class="subskills-list">
                             <li>Traiter des demandes concernant les applications</li>
                         </ul>
                     </div>
-                    <div class="competence-block">
+                    <div class="competence-block" data-images="st1_11.jpg">
                         <div class="competence-title">Développer la présence en ligne de l'organisation</div>
                         <ul class="subskills-list">
                             <li>Participer à la valorisation de l'image de l'organisation sur les médias numériques
@@ -196,8 +213,13 @@
                             </li>
                         </ul>
                     </div>
-                    <p style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
-                        Suite à des demandes d'évolution fonctionnelle, j'ai modifié le modèle de données de l'application afin d'intégrer de nouveaux champs et fonctionnalités. J'ai également configuré l'interface d'administration pour permettre aux utilisateurs de gérer ces nouvelles fonctionnalités. Ces évolutions ont permis d'enrichir le service proposé et de renforcer la présence en ligne de l'organisation.
+                    <p
+                        style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                        Suite à des demandes d'évolution fonctionnelle, j'ai modifié le modèle de données de
+                        l'application afin d'intégrer de nouveaux champs et fonctionnalités. J'ai également configuré
+                        l'interface d'administration pour permettre aux utilisateurs de gérer ces nouvelles
+                        fonctionnalités. Ces évolutions ont permis d'enrichir le service proposé et de renforcer la
+                        présence en ligne de l'organisation.
                     </p>
                 </div>
             </div>
@@ -218,12 +240,15 @@
                     <div class="proof-image">
                         <img src="st1_16.jpg" alt="Description de l'image">
                     </div>
-                    
+
                 </div>
-                        <div style="margin: 30px 0; text-align: center;">
-                            <button id="showSecretBtn2-part1" style="background: #00e0ff; color: #222; border: none; border-radius: 8px; padding: 10px 22px; font-size: 1.1rem; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(0,224,255,0.15); transition: background 0.2s;">Afficher le code modifié pour le ticket</button>
-                            <div id="secretText2-part1" style="display: none; margin-top: 18px; background: #282a36; border-radius: 8px; padding: 18px; border-left: 3px solid #00e0ff;">
-                                <pre style="margin:0;"><code class="language-php">
+                <div style="margin: 30px 0; text-align: center;">
+                    <button id="showSecretBtn2-part1"
+                        style="background: #00e0ff; color: #222; border: none; border-radius: 8px; padding: 10px 22px; font-size: 1.1rem; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(0,224,255,0.15); transition: background 0.2s;">Afficher
+                        le code modifié pour le ticket</button>
+                    <div id="secretText2-part1"
+                        style="display: none; margin-top: 18px; background: #282a36; border-radius: 8px; padding: 18px; border-left: 3px solid #00e0ff;">
+                        <pre style="margin:0;"><code class="language-php">
 //Fichier migration
 &lt;?php
 
@@ -334,49 +359,60 @@ class KeyValueType extends AbstractType
     &#125;
 &#125;
                 </code></pre>
-            </div>
+                    </div>
 
-        </div>
-        
+                </div>
 
-        <!-- 2ème partie du stage -->
-        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
-            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
-                <h4>Maintenance évolutive d'une application web en environnement professionnel</h4>
-                <div style="margin-top: 20px;">
-                    <h5 style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
-                        🛠️ Compétences & sous-compétences mises en œuvre
-                    </h5>
-                    <div class="competence-block">
-                        <div class="competence-title">Mettre à disposition des utilisateurs un service numérique</div>
-                        <ul class="subskills-list">
-                            <li>Réaliser les tests d'intégration et d'acceptation d'un service</li>
-                        </ul>
+
+                <!-- 2ème partie du stage -->
+                <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+                    <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                        <h4>Maintenance évolutive d'une application web en environnement professionnel</h4>
+                        <div style="margin-top: 20px;">
+                            <h5
+                                style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                                🛠️ Compétences & sous-compétences mises en œuvre
+                            </h5>
+                            <div class="competence-block" data-images="st1_4.jpg, st1_14.jpg"
+                                data-tools="VS Code, Docker">
+                                <div class="competence-title">Mettre à disposition des utilisateurs un service numérique
+                                </div>
+                                <ul class="subskills-list">
+                                    <li>Réaliser les tests d'intégration et d'acceptation d'un service</li>
+                                </ul>
+                            </div>
+                            <p
+                                style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                                L'application étant déjà en production, j'ai participé à sa maintenance évolutive en
+                                réalisant des modifications sur des fonctionnalités existantes. Cela a également permis
+                                de corriger certains problèmes et d'adapter l'application aux besoins. Les évolutions
+                                réalisées ont été intégrées directement dans l'interface de l'application pour que les
+                                utilisateurs puissent continuer à utiliser le service dans de bonnes conditions.
+                            </p>
+                        </div>
                     </div>
-                    <p style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
-                        L'application étant déjà en production, j'ai participé à sa maintenance évolutive en réalisant des modifications sur des fonctionnalités existantes. Cela a également permis de corriger certains problèmes et d'adapter l'application aux besoins. Les évolutions réalisées ont été intégrées directement dans l'interface de l'application pour que les utilisateurs puissent continuer à utiliser le service dans de bonnes conditions.
-                    </p>
+                    <div style="width: 100%;">
+                        <h5
+                            style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                            📸 Preuves
+                        </h5>
+                        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px;">
+                            <div class="proof-image">
+                                <img src="st1_4.jpg" alt="Description de l'image">
+                            </div>
+                            <div class="proof-image">
+                                <img src="st1_14.jpg" alt="Description de l'image">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div style="width: 100%;">
-                <h5
-                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
-                    📸 Preuves
-                </h5>
-                <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px;">
-                    <div class="proof-image">
-                        <img src="st1_4.jpg" alt="Description de l'image">
-                    </div>
-                    <div class="proof-image">
-                        <img src="st1_14.jpg" alt="Description de l'image">
-                    </div>
-                </div>
-            </div>
-        </div>
-    <div style="margin: 30px 0; text-align: center;">
-    <button id="showSecretBtn2-part2" style="background: #00e0ff; color: #222; border: none; border-radius: 8px; padding: 10px 22px; font-size: 1.1rem; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(0,224,255,0.15); transition: background 0.2s;">Afficher le code modifié pour le ticket</button>
-    <div id="secretText2-part2" style="display: none; margin-top: 18px; background: #282a36; border-radius: 8px; padding: 18px; border-left: 3px solid #00e0ff;">
-    <pre class="language-php" style="margin:0;"><code class="language-php">
+                <div style="margin: 30px 0; text-align: center;">
+                    <button id="showSecretBtn2-part2"
+                        style="background: #00e0ff; color: #222; border: none; border-radius: 8px; padding: 10px 22px; font-size: 1.1rem; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(0,224,255,0.15); transition: background 0.2s;">Afficher
+                        le code modifié pour le ticket</button>
+                    <div id="secretText2-part2"
+                        style="display: none; margin-top: 18px; background: #282a36; border-radius: 8px; padding: 18px; border-left: 3px solid #00e0ff;">
+                        <pre class="language-php" style="margin:0;"><code class="language-php">
 if (null === $entityChangeSet['image'][1]) {
     if ($translation->getImagePath()) {
         $translation->setImage($entityChangeSet['image'][0]);
@@ -389,55 +425,61 @@ if (null === $entityChangeSet['image'][1]) {
     $this->uploadToBucket($translation);
 }
                 </code></pre>
+                    </div>
+                </div>
+
+
             </div>
-        </div>
 
-        
-        </div>
-        
 
-        <!-- 3ème partie du stage -->
-        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+            <!-- 3ème partie du stage -->
+            <div class="proof-item" style="flex-direction: column; align-items: stretch;">
 
-            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
-                <h4>Travail collaboratif et gestion de versions dans un projet de développement</h4>
-                <div style="margin-top: 20px;">
-                    <h5 style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
-                        🛠️ Compétences & sous-compétences mises en œuvre
+                <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                    <h4>Travail collaboratif et gestion de versions dans un projet de développement</h4>
+                    <div style="margin-top: 20px;">
+                        <h5
+                            style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                            🛠️ Compétences & sous-compétences mises en œuvre
+                        </h5>
+                        <div class="competence-block" data-images="st1_17.jpg" data-tools="Jira,Git">
+                            <div class="competence-title">Travailler en mode projet</div>
+                            <ul class="subskills-list">
+                                <li>Analyser les objectifs et les modalités d'organisation d'un projet</li>
+                                <li>Planifier les activités</li>
+                            </ul>
+                        </div>
+                        <div class="competence-block" data-images="st1_17.jpg" data-tools="Jira,Git">
+                            <div class="competence-title">Gérer le patrimoine informatique</div>
+                            <ul class="subskills-list">
+                                <li>Gérer des sauvegardes</li>
+                            </ul>
+                        </div>
+                        <p
+                            style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                            Le projet a été réalisé en collaboration avec l'équipe de développement. J'ai travaillé avec
+                            les autres membres du projet en utilisant des outils de gestion de versions (Git), des
+                            procédures de validation du code (pull requests) et des pipelines d'intégration continue.
+                            Cela m'a permis d'organiser mon travail, de structurer mes développements et de respecter
+                            les bonnes pratiques professionnelles.
+                        </p>
+                    </div>
+                </div>
+                <div style="width: 100%;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        📸 Preuves
                     </h5>
-                    <div class="competence-block">
-                        <div class="competence-title">Travailler en mode projet</div>
-                        <ul class="subskills-list">
-                            <li>Analyser les objectifs et les modalités d'organisation d'un projet</li>
-                            <li>Planifier les activités</li>
-                        </ul>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                        <div class="proof-image">
+                            <img src="st1_17.jpg" alt="Description de l'image">
+                        </div>
                     </div>
-                    <div class="competence-block">
-                        <div class="competence-title">Gérer le patrimoine informatique</div>
-                        <ul class="subskills-list">
-                            <li>Gérer des sauvegardes</li>
-                        </ul>
-                    </div>
-                    <p style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
-                        Le projet a été réalisé en collaboration avec l'équipe de développement. J'ai travaillé avec les autres membres du projet en utilisant des outils de gestion de versions (Git), des procédures de validation du code (pull requests) et des pipelines d'intégration continue. Cela m'a permis d'organiser mon travail, de structurer mes développements et de respecter les bonnes pratiques professionnelles.
-                    </p>
                 </div>
             </div>
-            <div style="width: 100%;">
-                <h5
-                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
-                    📸 Preuves
-                </h5>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                    <div class="proof-image">
-                        <img src="st1_17.jpg" alt="Description de l'image">
-                    </div>
-                    </div>
-            </div>
-        </div>
-
-         <!-- 4ème partie du stage
+            <!-- 4ème partie du stage
         <div class="proof-item" style="flex-direction: column; align-items: stretch;">
 
             <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
@@ -662,48 +704,53 @@ public function load(ObjectManager $manager): void
     -->
 
 
-        <!-- 5ème partie du stage -->
-        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+            <!-- 5ème partie du stage -->
+            <div class="proof-item" style="flex-direction: column; align-items: stretch;">
 
-            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
-                <h4>Montée en compétences sur Symfony et outils de développement professionnels</h4>
-                <div style="margin-top: 20px;">
-                    <h5 style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
-                        🛠️ Compétences & sous-compétences mises en œuvre
+                <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                    <h4>Montée en compétences sur Symfony et outils de développement professionnels</h4>
+                    <div style="margin-top: 20px;">
+                        <h5
+                            style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                            🛠️ Compétences & sous-compétences mises en œuvre
+                        </h5>
+                        <div class="competence-block" data-images="symfony.PNG">
+                            <div class="competence-title">Organiser son développement professionnel</div>
+                            <ul class="subskills-list">
+                                <li>Mettre en place son environnement d'apprentissage personnel</li>
+                            </ul>
+                        </div>
+                        <div class="competence-block" data-images="st1_18.jpg" data-tools="Bitbucket">
+                            <div class="competence-title">Gérer le patrimoine informatique</div>
+                            <ul class="subskills-list">
+                                <li>Vérifier les conditions de la continuité d'un service informatique</li>
+                            </ul>
+                        </div>
+                        <p
+                            style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                            Au cours de mon stage, j'ai renforcé mes compétences sur le framework Symfony ainsi que sur
+                            les outils de développement utilisés en entreprise et les outils de collaboration. J'ai
+                            également maintenu les versions à jour pour éviter que le site ne devienne obsolète ou
+                            vulnérable.
+                        </p>
+                    </div>
+                </div>
+                <div style="width: 100%;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        📸 Preuves
                     </h5>
-                    <div class="competence-block">
-                        <div class="competence-title">Organiser son développement professionnel</div>
-                        <ul class="subskills-list">
-                            <li>Mettre en place son environnement d'apprentissage personnel</li>
-                        </ul>
-                    </div>
-                    <div class="competence-block">
-                        <div class="competence-title">Gérer le patrimoine informatique</div>
-                        <ul class="subskills-list">
-                            <li>Vérifier les conditions de la continuité d'un service informatique</li>
-                        </ul>
-                    </div>
-                    <p style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
-                        Au cours de mon stage, j'ai renforcé mes compétences sur le framework Symfony ainsi que sur les outils de développement utilisés en entreprise et les outils de collaboration. J'ai également maintenu les versions à jour pour éviter que le site ne devienne obsolète ou vulnérable.
-                    </p>
-                </div>
-            </div>
-            <div style="width: 100%;">
-                <h5
-                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
-                    📸 Preuves
-                </h5>
 
-                <div class="proof-images-row">
-                    <div class="proof-image">
-                        <img src="symfony.PNG" alt="Symfony">
-                    </div>
-                    <div class="proof-image">
-                        <img src="st1_18.jpg" alt="Mise à jour EasyAdmin">
+                    <div class="proof-images-row">
+                        <div class="proof-image">
+                            <img src="symfony.PNG" alt="Symfony">
+                        </div>
+                        <div class="proof-image">
+                            <img src="st1_18.jpg" alt="Mise à jour EasyAdmin">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
     </main>
 
@@ -718,62 +765,62 @@ public function load(ObjectManager $manager): void
 
     <script>
 
-document.addEventListener('DOMContentLoaded', function() {
-                    var test = document.getElementById('test');
-                    var test2 = document.getElementById('test2');
-                    if (test && test2) {
-                        test.addEventListener('click', function() {
-                            if (test2.style.display === 'none') {
-                                test2.style.display = 'block';
-                                test.textContent = 'Masquer le code modifié pour le ticket';
-                            } else {
-                                test2.style.display = 'none';
-                                test.textContent = 'Afficher le code modifié pour le ticket';
-                            }
-                        });
+        document.addEventListener('DOMContentLoaded', function () {
+            var test = document.getElementById('test');
+            var test2 = document.getElementById('test2');
+            if (test && test2) {
+                test.addEventListener('click', function () {
+                    if (test2.style.display === 'none') {
+                        test2.style.display = 'block';
+                        test.textContent = 'Masquer le code modifié pour le ticket';
+                    } else {
+                        test2.style.display = 'none';
+                        test.textContent = 'Afficher le code modifié pour le ticket';
                     }
-                    // Fonction pour ouvrir le code en plein écran
-                    function openCodeModal(codeHtml) {
-                        const modal = document.getElementById('codeModal');
-                        const codeBlock = document.getElementById('modalCodeBlock').querySelector('code');
-                        codeBlock.innerHTML = codeHtml;
-                        modal.style.display = 'flex';
-                        Prism.highlightElement(codeBlock);
-                        document.body.style.overflow = 'hidden';
-                    }
-                    function closeCodeModal() {
-                        document.getElementById('codeModal').style.display = 'none';
-                        document.body.style.overflow = 'auto';
-                    }
-                    document.getElementById('closeCodeModal').onclick = closeCodeModal;
-                    // Partie 1
-                    var btn2p1 = document.getElementById('showSecretBtn2-part1');
-                    var secret2p1 = document.getElementById('secretText2-part1');
-                    if (btn2p1 && secret2p1) {
-                        btn2p1.addEventListener('click', function() {
-                            var code = secret2p1.querySelector('code').innerHTML;
-                            openCodeModal(code);
-                        });
-                    }
-                    // Partie 2
-                    var btn2p2 = document.getElementById('showSecretBtn2-part2');
-                    var secret2p2 = document.getElementById('secretText2-part2');
-                    if (btn2p2 && secret2p2) {
-                        btn2p2.addEventListener('click', function() {
-                            var code = secret2p2.querySelector('code').innerHTML;
-                            openCodeModal(code);
-                        });
-                    }
-                    // Partie 4
-                    var btn2p4 = document.getElementById('showSecretBtn2-part4');
-                    var secret2p4 = document.getElementById('secretText2-part4');
-                    if (btn2p4 && secret2p4) {
-                        btn2p4.addEventListener('click', function() {
-                            var code = secret2p4.querySelector('code').innerHTML;
-                            openCodeModal(code);
-                        });
-                    }
-            });
+                });
+            }
+            // Fonction pour ouvrir le code en plein écran
+            function openCodeModal(codeHtml) {
+                const modal = document.getElementById('codeModal');
+                const codeBlock = document.getElementById('modalCodeBlock').querySelector('code');
+                codeBlock.innerHTML = codeHtml;
+                modal.style.display = 'flex';
+                Prism.highlightElement(codeBlock);
+                document.body.style.overflow = 'hidden';
+            }
+            function closeCodeModal() {
+                document.getElementById('codeModal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+            document.getElementById('closeCodeModal').onclick = closeCodeModal;
+            // Partie 1
+            var btn2p1 = document.getElementById('showSecretBtn2-part1');
+            var secret2p1 = document.getElementById('secretText2-part1');
+            if (btn2p1 && secret2p1) {
+                btn2p1.addEventListener('click', function () {
+                    var code = secret2p1.querySelector('code').innerHTML;
+                    openCodeModal(code);
+                });
+            }
+            // Partie 2
+            var btn2p2 = document.getElementById('showSecretBtn2-part2');
+            var secret2p2 = document.getElementById('secretText2-part2');
+            if (btn2p2 && secret2p2) {
+                btn2p2.addEventListener('click', function () {
+                    var code = secret2p2.querySelector('code').innerHTML;
+                    openCodeModal(code);
+                });
+            }
+            // Partie 4
+            var btn2p4 = document.getElementById('showSecretBtn2-part4');
+            var secret2p4 = document.getElementById('secretText2-part4');
+            if (btn2p4 && secret2p4) {
+                btn2p4.addEventListener('click', function () {
+                    var code = secret2p4.querySelector('code').innerHTML;
+                    openCodeModal(code);
+                });
+            }
+        });
 
 
 
@@ -852,41 +899,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const buildPayload = (content) => {
                 const realisation = content.querySelector('h4')?.textContent.trim() || 'Realisation';
+
+                /*
+                 * Pour associer des images à une compétence précise, ajoutez l'attribut
+                 * data-images="fichier1.jpg,fichier2.jpg" sur le div.competence-block.
+                 *
+                 * Pour lister les outils utilisés pour cette réalisation, ajoutez l'attribut
+                 * data-tools="Jira,Git,VS Code" sur le div.proof-content.
+                 * Exemple :
+                 *   <div class="proof-content" data-tools="Jira,Git,VS Code" style="...">
+                 */
                 const competences = Array.from(content.querySelectorAll('.competence-block')).map((block) => {
                     const title = block.querySelector('.competence-title')?.textContent.trim() || 'Competence';
                     const subskills = Array.from(block.querySelectorAll('li')).map((item) => item.textContent.trim()).filter(Boolean);
-                    return { title, subskills };
+                    const rawImages = block.getAttribute('data-images') || '';
+                    const images = rawImages.split(',').map(s => s.trim()).filter(Boolean);
+                    const rawTools = block.getAttribute('data-tools') || '';
+                    const tools = rawTools.split(',').map(s => s.trim()).filter(Boolean);
+                    return { title, subskills, images, tools };
                 });
-
-                const currentIndex = contentsArray.indexOf(content);
-                const nextContent = currentIndex >= 0 ? contentsArray[currentIndex + 1] : null;
-
-                const images = Array.from(document.querySelectorAll('.proof-image img'))
-                    .filter((img) => {
-                        const isAfterCurrent = Boolean(content.compareDocumentPosition(img) & Node.DOCUMENT_POSITION_FOLLOWING);
-                        if (!isAfterCurrent) {
-                            return false;
-                        }
-
-                        if (!nextContent) {
-                            return true;
-                        }
-
-                        const isBeforeNextContent = Boolean(img.compareDocumentPosition(nextContent) & Node.DOCUMENT_POSITION_FOLLOWING);
-                        return isBeforeNextContent;
-                    })
-                    .map((img) => img.getAttribute('src') ? img.getAttribute('src').trim() : '')
-                    .filter(Boolean);
-
-                const uniqueImages = Array.from(new Set(images));
 
                 const sourceWithAnchor = sourcePage + '#' + encodeURIComponent(content.id);
 
                 const payload = {
                     sourcePage: sourceWithAnchor,
                     realisation,
-                    competences,
-                    images: uniqueImages
+                    competences
                 };
 
                 return payload;
