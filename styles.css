@@ -2357,3 +2357,80 @@ code {
         padding: 15px 5px !important;
     }
 }
+
+/* Navigation Flottante Globale (Projets & Stages) */
+.floating-menu {
+    position: fixed;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1200;
+    border-radius: 12px;
+    padding: 10px;
+    background: rgba(20, 22, 34, 0.84);
+    border: 1px solid rgba(0, 224, 255, 0.3);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.floating-menu a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 224, 255, 0.35);
+    background: rgba(0, 224, 255, 0.12);
+    color: #d8f7ff;
+    font-size: 1.4rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.floating-menu a:hover {
+    background: rgba(0, 224, 255, 0.3);
+    transform: scale(1.1);
+    border-color: #00e0ff;
+}
+
+.floating-menu a::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%) translateX(10px);
+    background: rgba(20, 22, 34, 0.95);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 224, 255, 0.3);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.floating-menu a:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+@media (max-width: 1024px) {
+    .floating-menu {
+        top: auto;
+        bottom: 15px;
+        right: 50%;
+        transform: translateX(50%);
+        flex-direction: row;
+        padding: 8px;
+    }
+    .floating-menu a::after {
+        display: none;
+    }
+}

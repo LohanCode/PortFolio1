@@ -129,6 +129,12 @@
                 style="background:none; margin:0; font-size:1.1rem;"><code class="language-php"></code></pre>
         </div>
     </div>
+    <nav class="floating-menu">
+        <a href="index.html#preuves" data-tooltip="Retour Portfolio">🏠</a>
+        <a href="projets_cours.html" data-tooltip="Projets en Cours">🎓</a>
+        <a href="stage_1.html" data-tooltip="Stage 1ère Année">🏢<sup>1</sup></a>
+        <a href="stage_2.html" data-tooltip="Stage 2ème Année">🏢<sup>2</sup></a>
+    </nav>
     <div class="orb orb1"></div>
     <div class="orb orb2"></div>
     <div class="orb orb3"></div>
@@ -138,6 +144,8 @@
         <h1 class="animated-title">Stage 1ère Année</h1>
         <nav class="section-nav" style="justify-content: center; margin-top: 20px;">
             <a href="index.html#preuves">⬅️ Retour au Portfolio</a>
+            <a href="projets_cours.html">🎓 Projets en Cours</a>
+            <a href="stage_2.html">🏢 Stage 2ème Année</a>
         </nav>
     </header>
 
@@ -222,226 +230,52 @@
                         présence en ligne de l'organisation.
                     </p>
                 </div>
-            </div>
+            
             <div style="width: 100%;">
-                <h5
-                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                <h5 style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
                     📸 Preuves
                 </h5>
-
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-
                     <div class="proof-image">
-                        <img src="st1_17.jpg" alt="Description de l'image">
-                    </div>
-                    <div class="proof-image">
-                        <img src="st1_15.jpg" alt="Description de l'image">
+                        <img src="st1_17.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
                     </div>
                     <div class="proof-image">
-                        <img src="st1_11.jpg" alt="Description de l'image">
+                        <img src="st1_15.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
                     </div>
                     <div class="proof-image">
-                        <img src="st1_16.jpg" alt="Description de l'image">
+                        <img src="st1_16.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
                     </div>
                     <div class="proof-image">
-                        <img src="st1_13.jpg" alt="Description de l'image">
+                        <img src="st1_11.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
                     </div>
                     <div class="proof-image">
-                        <img src="st1_4.jpg" alt="Description de l'image">
+                        <img src="st1_13.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
                     </div>
                     <div class="proof-image">
-                        <img src="st1_2.jpg" alt="Description de l'image">
+                        <img src="st1_4.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
                     </div>
-
-                </div>
-                <div style="margin: 30px 0; text-align: center;">
-                    <button id="showSecretBtn2-part1"
-                        style="background: #00e0ff; color: #222; border: none; border-radius: 8px; padding: 10px 22px; font-size: 1.1rem; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(0,224,255,0.15); transition: background 0.2s;">Afficher
-                        le code modifié pour le ticket</button>
-                    <div id="secretText2-part1"
-                        style="display: none; margin-top: 18px; background: #282a36; border-radius: 8px; padding: 18px; border-left: 3px solid #00e0ff;">
-                        <pre style="margin:0;"><code class="language-php">
-//Fichier migration
-&lt;?php
-
-declare(strict_types=1);
-
-namespace DoctrineMigrations;
-
-use Doctrine\DBAL\Schema\Schema;
-use Doctrine\Migrations\AbstractMigration;
-
-/**
- * Auto-generated Migration: Please modify to your needs!
- */
-final class Version20250613144413 extends AbstractMigration
-&#123;
-    public function getDescription(): string
-    &#123;
-        return '';
-    &#125;
-
-    public function up(Schema $schema): void
-    &#123;
-        // this up() migration is auto-generated, please modify it to your needs
-        $this-&gt;addSql(&lt;&lt;&lt;'SQL'
-            ALTER TABLE article ADD custom_fields JSON DEFAULT NULL
-        SQL);
-    &#125;
-
-    public function down(Schema $schema): void
-    &#123;
-        // this down() migration is auto-generated, please modify it to your needs
-        $this-&gt;addSql(&lt;&lt;&lt;'SQL'
-            ALTER TABLE article DROP custom_fields
-        SQL);
-    &#125;
-&#125;
-
-//Fichier ArticleCrudController.php
-
-use App\Field\ArticleTranslationField;
-use App\Field\ArticleTranslationImageField;
-use App\Form\ArticleTranslationType;
-use App\Form\Type\KeyValueType;
-use Doctrine\ORM\QueryBuilder;
-use EasyCorp\Bundle\EasyAdminBundle\Collection\FieldCollection;
-use EasyCorp\Bundle\EasyAdminBundle\Collection\FilterCollection;
-
-DateField::new('endPublicationAt'),
-            AssociationField::new('game')-&gt;setQueryBuilder($callableQueryBuilderGame),
-            ArticleTranslationImageField::new('articleTranslations', 'Image')-&gt;onlyOnDetail(),
-            CollectionField::new('CustomFields', 'Custom Fields')
-                -&gt;setEntryType(KeyValueType::class)
-                -&gt;hideOnIndex(),
-        ];
-    &#123;
-
-//Fichier Article.php
-
-#[Valid]
-    private Collection $articleTranslations;
-
-    #[ORM\Column(type: 'json', nullable: true)]
-    #[Groups('article:read')]
-    private ?array $customFields = [];
-
-    public function __construct()
-    &#123;
-        $this-&gt;platforms = new ArrayCollection();
-
-               return $this;
-    &#125;
-
-    #[Groups('article:read')]
-    public function getCustomFields(): ?array
-    &#123;
-        if (empty($this-&gt;customFields)) &#123;
-            return null;
-        &#125;
-
-        return $this-&gt;customFields;
-    &#125;
-
-    public function setCustomFields(?array $customFields): self
-    &#123;
-        $this-&gt;customFields = $customFields;
-
-        return $this;
-    &#125;
-&#125;
-
-//Fichier KeyValueType.php
-
-&lt;?php
-
-namespace App\Form\Type;
-
-use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\FormBuilderInterface;
-
-class KeyValueType extends AbstractType
-&#123;
-    public function buildForm(FormBuilderInterface $builder, array $options): void
-    &#123;
-        $builder
-            -&gt;add('name', TextType::class)
-            -&gt;add('value', TextType::class);
-    &#125;
-&#125;
-                </code></pre>
-                    </div>
-
-                </div>
-
-
-                <!-- 2ème partie du stage
-                <div class="proof-item" style="flex-direction: column; align-items: stretch;">
-                    <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
-                        <h4>Maintenance évolutive d'une application web en environnement professionnel</h4>
-                        <div style="margin-top: 20px;">
-                            <h5
-                                style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
-                                🛠️ Compétences & sous-compétences mises en œuvre
-                            </h5>
-                            <div class="competence-block" data-images="st1_4.jpg, st1_14.jpg"
-                                data-tools="VS Code, Docker">
-                                <div class="competence-title">Mettre à disposition des utilisateurs un service numérique
-                                </div>
-                                <ul class="subskills-list">
-                                    <li>Réaliser les tests d'intégration et d'acceptation d'un service</li>
-                                </ul>
-                            </div>
-                            <p
-                                style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
-                                L'application étant déjà en production, j'ai participé à sa maintenance évolutive en
-                                réalisant des modifications sur des fonctionnalités existantes. Cela a également permis
-                                de corriger certains problèmes et d'adapter l'application aux besoins. Les évolutions
-                                réalisées ont été intégrées directement dans l'interface de l'application pour que les
-                                utilisateurs puissent continuer à utiliser le service dans de bonnes conditions.
-                            </p>
-                        </div>
-                    </div>
-                    <div style="width: 100%;">
-                        <h5
-                            style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
-                            📸 Preuves
-                        </h5>
-                        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px;">
-                            <div class="proof-image">
-                                <img src="st1_4.jpg" alt="Description de l'image">
-                            </div>
-                            <div class="proof-image">
-                                <img src="st1_14.jpg" alt="Description de l'image">
-                            </div>
-                        </div>
+                    <div class="proof-image">
+                        <img src="st1_2.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
                     </div>
                 </div>
-                <div style="margin: 30px 0; text-align: center;">
-                    <button id="showSecretBtn2-part2"
-                        style="background: #00e0ff; color: #222; border: none; border-radius: 8px; padding: 10px 22px; font-size: 1.1rem; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(0,224,255,0.15); transition: background 0.2s;">Afficher
-                        le code modifié pour le ticket</button>
-                    <div id="secretText2-part2"
-                        style="display: none; margin-top: 18px; background: #282a36; border-radius: 8px; padding: 18px; border-left: 3px solid #00e0ff;">
-                        <pre class="language-php" style="margin:0;"><code class="language-php">
-if (null === $entityChangeSet['image'][1]) {
-    if ($translation->getImagePath()) {
-        $translation->setImage($entityChangeSet['image'][0]);
-    } else {
-        $translation->setImagePath(null);
-        $translation->setResizedImages([]);
-    }
-} else {
-    $translation->setImage($entityChangeSet['image'][1]);
-    $this->uploadToBucket($translation);
-}
-                </code></pre>
-                    </div>
-                </div>
-
-
             </div>
+
+        </div>
+            
         -->
 
             <!-- 3ème partie du stage
@@ -470,19 +304,22 @@ if (null === $entityChangeSet['image'][1]) {
                         </p>
                     </div>
                 </div>
-                <div style="width: 100%;">
-                    <h5
-                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
-                        📸 Preuves
-                    </h5>
-
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                        <div class="proof-image">
-                            <img src="st1_17.jpg" alt="Description de l'image">
-                        </div>
+                
+            
+            <div style="width: 100%;">
+                <h5 style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    📸 Preuves
+                </h5>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div class="proof-image">
+                        <img src="st1_17.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
                     </div>
                 </div>
             </div>
+
+        </div>
         -->
             <!-- 4ème partie du stage
         <div class="proof-item" style="flex-direction: column; align-items: stretch;">
@@ -734,18 +571,7 @@ public function load(ObjectManager $manager): void
                         </p>
                     </div>
                 </div>
-                <div style="width: 100%;">
-                    <h5
-                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
-                        📸 Preuves
-                    </h5>
-
-                    <div class="proof-images-row">
-                        <div class="proof-image">
-                            <img src="symfony.PNG" alt="Symfony">
-                        </div>
-                    </div>
-                </div>
+                
             </div>
 
     </main>
@@ -757,7 +583,31 @@ public function load(ObjectManager $manager): void
     <div id="lightbox">
         <span class="close-btn">&times;</span>
         <img src="" alt="Zoom">
-    </div>
+    
+            <div style="width: 100%;">
+                <h5 style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    📸 Preuves
+                </h5>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div class="proof-image">
+                        <img src="symfony.PNG" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                    <div class="proof-image">
+                        <img src="fichier1.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                    <div class="proof-image">
+                        <img src="fichier2.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
     <script>
 
@@ -905,14 +755,35 @@ public function load(ObjectManager $manager): void
                  * Exemple :
                  *   <div class="proof-content" data-tools="Jira,Git,VS Code" style="...">
                  */
-                const competences = Array.from(content.querySelectorAll('.competence-block')).map((block) => {
+                let competences = [];
+                Array.from(content.querySelectorAll('.competence-block')).forEach((block) => {
                     const title = block.querySelector('.competence-title')?.textContent.trim() || 'Competence';
                     const subskills = Array.from(block.querySelectorAll('li')).map((item) => item.textContent.trim()).filter(Boolean);
+                    
                     const rawImages = block.getAttribute('data-images') || '';
-                    const images = rawImages.split(',').map(s => s.trim()).filter(Boolean);
                     const rawTools = block.getAttribute('data-tools') || '';
-                    const tools = rawTools.split(',').map(s => s.trim()).filter(Boolean);
-                    return { title, subskills, images, tools };
+                    
+                    if (subskills.length > 1) {
+                        const hasImageGroups = rawImages.includes('|');
+                        const imageGroups = hasImageGroups ? rawImages.split('|').map(g => g.split(',').map(s => s.trim()).filter(Boolean)) : [];
+                        const defaultImages = !hasImageGroups ? rawImages.split(',').map(s => s.trim()).filter(Boolean) : [];
+                        const chunkImgSize = defaultImages.length > 0 ? Math.ceil(defaultImages.length / subskills.length) : 0;
+
+                        const hasToolGroups = rawTools.includes('|');
+                        const toolGroups = hasToolGroups ? rawTools.split('|').map(g => g.split(',').map(s => s.trim()).filter(Boolean)) : [];
+                        // Par defaut, on assigne tous les outils a chaque sous-competence s'il n'y a pas de separateur |
+                        const defaultTools = !hasToolGroups ? rawTools.split(',').map(s => s.trim()).filter(Boolean) : [];
+
+                        subskills.forEach((subskill, i) => {
+                            const subImages = hasImageGroups ? (imageGroups[i] || []) : defaultImages.slice(i * chunkImgSize, (i + 1) * chunkImgSize);
+                            const subTools = hasToolGroups ? (toolGroups[i] || []) : defaultTools;
+                            competences.push({ title, subskills: [subskill], images: subImages, tools: subTools });
+                        });
+                    } else {
+                        const images = rawImages.split(',').map(s => s.trim()).filter(Boolean);
+                        const tools = rawTools.split(',').map(s => s.trim()).filter(Boolean);
+                        competences.push({ title, subskills, images, tools });
+                    }
                 });
 
                 const sourceWithAnchor = sourcePage + '#' + encodeURIComponent(content.id);

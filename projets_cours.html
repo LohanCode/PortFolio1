@@ -120,6 +120,12 @@
 </head>
 
 <body>
+    <nav class="floating-menu">
+        <a href="index.html#preuves" data-tooltip="Retour Portfolio">🏠</a>
+        <a href="projets_cours.html" data-tooltip="Projets en Cours">🎓</a>
+        <a href="stage_1.html" data-tooltip="Stage 1ère Année">🏢<sup>1</sup></a>
+        <a href="stage_2.html" data-tooltip="Stage 2ème Année">🏢<sup>2</sup></a>
+    </nav>
     <div class="orb orb1"></div>
     <div class="orb orb2"></div>
     <div class="orb orb3"></div>
@@ -129,6 +135,8 @@
         <h1 class="animated-title">Projets en Cours</h1>
         <nav class="section-nav" style="justify-content: center; margin-top: 20px;">
             <a href="index.html#preuves">⬅️ Retour au Portfolio</a>
+            <a href="stage_1.html">🏢 Stage 1ère Année</a>
+            <a href="stage_2.html">🏢 Stage 2ème Année</a>
         </nav>
     </header>
 
@@ -145,23 +153,6 @@
                     <img src="vscode.png" alt="VS Code" style="width:32px;height:32px;object-fit:contain;">
                     <span style="font-weight:600;">VS Code</span>
                     <span style="color:#888;">Éditeur de code</span>
-                </li>
-                <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-                    <span style="display: flex; align-items: center; gap: 8px; white-space: nowrap;">
-                        <img src="git.png" alt="Git" style="width:32px;height:32px;object-fit:contain;">
-                        <span style="font-weight:600;">Git</span>
-                    </span>
-                    <span style="color:#888; flex:1;">Système logiciei de contrôle de version distribué permettant de
-                        gérer les versions de code source ou de données</span>
-                </li>
-                <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-                    <span style="display: flex; align-items: center; gap: 8px; white-space: nowrap;">
-                        <img src="docker.png" alt="Docker" style="width:32px;height:32px;object-fit:contain;">
-                        <span style="font-weight:600;">Docker</span>
-                    </span>
-                    <span style="color:#888; flex:1;">Plateforme de conteneurisation afin d'empaqueter des logiciels
-                        dans des conteneurs et les exécuter sur des machines cibles</span>
-
                 </li>
                 <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
                     <span style="display: flex; align-items: center; gap: 8px; white-space: nowrap;">
@@ -199,15 +190,16 @@
                         🛠️ Compétences & sous-compétences mises en oeuvre
                     </h5>
                     <div class="competence-block"
-                        data-images="AP1_1.PNG, AP1_2.PNG, AP1_5.PNG, AP1_3.PNG, AP1_4.PNG, AP1_6.PNG, AP1_7.PNG, AP1_8.PNG, AP1_9.PNG, AP1_11.PNG"
-                        data-tools="phpmyadmin, vs code, looping">
+                        data-images="AP1_1.PNG, AP1_2.PNG, AP1_5.PNG, AP1_11.PNG, AP1_3.PNG, AP1_4.PNG | AP1_6.PNG, AP1_7.PNG, AP1_8.PNG, AP1_9.PNG"
+                        data-tools="phpmyadmin, looping | VS code">
                         <div class="competence-title">Gérer le patrimoine informatique</div>
                         <ul class="subskills-list">
                             <li>Mettre en place et vérifier les niveaux d'habilitation associés à un service</li>
                             <li>Vérifier le respect des règles d’utilisation des ressources numériques</li>
                         </ul>
                     </div>
-                    <div class="competence-block" data-images="AP1_13.PNG, AP1_5.PNG, AP1_14.PNG" data-tools="looping, trello">
+                    <div class="competence-block" data-images="AP1_13.PNG, AP1_5.PNG | AP1_14.PNG"
+                        data-tools="looping | trello">
                         <div class="competence-title">Travailler en mode projet</div>
                         <ul class="subskills-list">
                             <li>Analyser les objectifs et les modalités d'organisation d'un projet</li>
@@ -223,20 +215,18 @@
                 </div>
             </div>
 
+            
+        
             <div style="width: 100%;">
-                <h5
-                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                <h5 style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
                     📸 Preuves
                 </h5>
-
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-
                     <div class="proof-image">
                         <img src="AP1_1.PNG" alt="">
                         <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
                         </p>
                     </div>
-
                     <div class="proof-image">
                         <img src="AP1_2.PNG" alt="">
                         <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
@@ -244,6 +234,11 @@
                     </div>
                     <div class="proof-image">
                         <img src="AP1_5.PNG" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                    <div class="proof-image">
+                        <img src="AP1_11.PNG" alt="">
                         <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
                         </p>
                     </div>
@@ -278,11 +273,6 @@
                         </p>
                     </div>
                     <div class="proof-image">
-                        <img src="AP1_11.PNG" alt="">
-                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
-                        </p>
-                    </div>
-                    <div class="proof-image">
                         <img src="AP1_13.PNG" alt="">
                         <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
                         </p>
@@ -294,9 +284,10 @@
                     </div>
                 </div>
             </div>
+
         </div>
 
-        <!--2ème preuves-->
+        <!--2ème preuves
 
         <div class="proof-item" style="flex-direction: column; align-items: stretch;">
             <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
@@ -342,30 +333,11 @@
                 </div>
             </div>
 
-            <div style="width: 100%;">
-                <h5
-                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
-                    📸 Preuves
-                </h5>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                    <div class="proof-image">
-                        <img src="" alt="">
-                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
-                        </p>
-                    </div>
-
-                    <div class="proof-image">
-                        <img src="" alt="">
-                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
-                        </p>
-                    </div>
-                </div>
-            </div>
+            
         </div>
+    -->
 
-
-        <!--3ème preuves-->
+        <!--3ème preuves
         <div class="proof-item" style="flex-direction: column; align-items: stretch;">
             <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
                 <h4>Traitement de tickets GLPI</h4>
@@ -409,29 +381,10 @@
                 </div>
             </div>
 
-            <div style="width: 100%;">
-                <h5
-                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
-                    📸 Preuves
-                </h5>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                    <div class="proof-image">
-                        <img src="" alt="">
-                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
-                        </p>
-                    </div>
-
-                    <div class="proof-image">
-                        <img src="" alt="">
-                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
-                        </p>
-                    </div>
-                </div>
-            </div>
+            
         </div>
-
-        <!--4ème preuves-->
+    -->
+        <!--4ème preuves
         <div class="proof-item" style="flex-direction: column; align-items: stretch;">
             <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
                 <h4>Conception, développement et déploiement d'un portfolio numérique professionnel</h4>
@@ -470,28 +423,9 @@
                 </div>
             </div>
 
-            <div style="width: 100%;">
-                <h5
-                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
-                    📸 Preuves
-                </h5>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                    <div class="proof-image">
-                        <img src="" alt="">
-                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
-                        </p>
-                    </div>
-
-                    <div class="proof-image">
-                        <img src="" alt="">
-                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
-                        </p>
-                    </div>
-                </div>
-            </div>
+            
         </div>
-
+    -->
 
 
     </main>
@@ -505,7 +439,26 @@
     <div id="lightbox">
         <span class="close-btn">&times;</span>
         <img src="" alt="Zoom">
-    </div>
+    
+            <div style="width: 100%;">
+                <h5 style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    📸 Preuves
+                </h5>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div class="proof-image">
+                        <img src="fichier1.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                    <div class="proof-image">
+                        <img src="fichier2.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -593,14 +546,35 @@
                  * Pour lister les outils utilisés pour cette réalisation, ajoutez l'attribut
                  * data-tools="Jira,Git,VS Code" sur le div.proof-content.
                  */
-                const competences = Array.from(content.querySelectorAll('.competence-block')).map((block) => {
+                let competences = [];
+                Array.from(content.querySelectorAll('.competence-block')).forEach((block) => {
                     const title = block.querySelector('.competence-title')?.textContent.trim() || 'Competence';
                     const subskills = Array.from(block.querySelectorAll('li')).map((item) => item.textContent.trim()).filter(Boolean);
+
                     const rawImages = block.getAttribute('data-images') || '';
-                    const images = rawImages.split(',').map(s => s.trim()).filter(Boolean);
                     const rawTools = block.getAttribute('data-tools') || '';
-                    const tools = rawTools.split(',').map(s => s.trim()).filter(Boolean);
-                    return { title, subskills, images, tools };
+
+                    if (subskills.length > 1) {
+                        const hasImageGroups = rawImages.includes('|');
+                        const imageGroups = hasImageGroups ? rawImages.split('|').map(g => g.split(',').map(s => s.trim()).filter(Boolean)) : [];
+                        const defaultImages = !hasImageGroups ? rawImages.split(',').map(s => s.trim()).filter(Boolean) : [];
+                        const chunkImgSize = defaultImages.length > 0 ? Math.ceil(defaultImages.length / subskills.length) : 0;
+
+                        const hasToolGroups = rawTools.includes('|');
+                        const toolGroups = hasToolGroups ? rawTools.split('|').map(g => g.split(',').map(s => s.trim()).filter(Boolean)) : [];
+                        // Par defaut, on assigne tous les outils a chaque sous-competence s'il n'y a pas de separateur |
+                        const defaultTools = !hasToolGroups ? rawTools.split(',').map(s => s.trim()).filter(Boolean) : [];
+
+                        subskills.forEach((subskill, i) => {
+                            const subImages = hasImageGroups ? (imageGroups[i] || []) : defaultImages.slice(i * chunkImgSize, (i + 1) * chunkImgSize);
+                            const subTools = hasToolGroups ? (toolGroups[i] || []) : defaultTools;
+                            competences.push({ title, subskills: [subskill], images: subImages, tools: subTools });
+                        });
+                    } else {
+                        const images = rawImages.split(',').map(s => s.trim()).filter(Boolean);
+                        const tools = rawTools.split(',').map(s => s.trim()).filter(Boolean);
+                        competences.push({ title, subskills, images, tools });
+                    }
                 });
 
                 const sourceWithAnchor = sourcePage + '#' + encodeURIComponent(content.id);
