@@ -828,6 +828,57 @@ public function buildForm(FormBuilderInterface $builder, array $options): void
                     }
                 });
             });
+            /* ── Masquage et bascule des Preuves ── */
+            const preuveHeaders = document.querySelectorAll('h5');
+            preuveHeaders.forEach(h5 => {
+                if (h5.textContent.includes('📸 Preuves')) {
+                    const container = h5.parentElement;
+                    const grid = container.querySelector('div[style*="display: grid"]');
+                    
+                    if (grid) {
+                        grid.style.display = 'none'; // Masqué par défaut
+                        
+                        const btn = document.createElement('button');
+                        btn.textContent = 'Afficher les screens';
+                        btn.style.cssText = 'margin-left: 15px; cursor: pointer; padding: 5px 14px; background: rgba(0, 224, 255, 0.15); color: #00e0ff; font-weight: 600; border-radius: 6px; border: 1px solid rgba(0, 224, 255, 0.3); font-size: 0.85rem; transform: translateY(-2px); transition: all 0.2s ease;';
+                        
+                        btn.onmouseover = () => {
+                            btn.style.background = '#00e0ff';
+                            btn.style.color = '#001a2d';
+                        };
+                        btn.onmouseout = () => {
+                            if (grid.style.display === 'none') {
+                                btn.style.background = 'rgba(0, 224, 255, 0.15)';
+                                btn.style.color = '#00e0ff';
+                            } else {
+                                btn.style.background = 'rgba(255, 107, 53, 0.15)';
+                                btn.style.color = '#ff6b35';
+                                btn.style.borderColor = 'rgba(255, 107, 53, 0.3)';
+                            }
+                        };
+
+                        btn.onclick = (e) => {
+                            e.stopPropagation(); // Éviter de cliquer sur la carte mère
+                            if (grid.style.display === 'none') {
+                                grid.style.display = 'grid';
+                                btn.textContent = 'Masquer les screens';
+                                btn.style.background = 'rgba(255, 107, 53, 0.15)';
+                                btn.style.color = '#ff6b35';
+                                btn.style.borderColor = 'rgba(255, 107, 53, 0.3)';
+                            } else {
+                                grid.style.display = 'none';
+                                btn.textContent = 'Afficher les screens';
+                                btn.style.background = 'rgba(0, 224, 255, 0.15)';
+                                btn.style.color = '#00e0ff';
+                                btn.style.borderColor = 'rgba(0, 224, 255, 0.3)';
+                            }
+                        };
+                        
+                        // Ajouter le bouton à côté du titre H5
+                        h5.appendChild(btn);
+                    }
+                }
+            });
         });
     </script>
 </body>
