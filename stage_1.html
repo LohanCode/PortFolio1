@@ -553,7 +553,7 @@ public function load(ObjectManager $manager): void
                             style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
                             🛠️ Compétences & sous-compétences mises en œuvre
                         </h5>
-                        <div class="competence-block" data-images="symfony.PNG">
+                        <div class="competence-block" data-images="symfony.PNG, st1_19.PNG, st1_20.PNG ">
                             <div class="competence-title">Organiser son développement professionnel</div>
                             <ul class="subskills-list">
                                 <li>Mettre en place son environnement d'apprentissage personnel</li>
@@ -579,8 +579,20 @@ public function load(ObjectManager $manager): void
                             <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
                             </p>
                         </div>
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                            <div class="proof-image">
+                                <img src="st1_19.PNG" alt="">
+                                <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                                </p>
+                            </div>
+                            <div class="proof-image">
+                                <img src="st1_20.PNG" alt="">
+                                <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                                </p>
+                            </div>
 
-                    </div>
+                        </div>
 
     </main>
 
@@ -848,21 +860,21 @@ public function load(ObjectManager $manager): void
                     }
                 });
             });
-            
+
             /* ── Masquage et bascule des Preuves ── */
             const preuveHeaders = document.querySelectorAll('h5');
             preuveHeaders.forEach(h5 => {
                 if (h5.textContent.includes('📸 Preuves')) {
                     const container = h5.parentElement;
                     const grid = container.querySelector('div[style*="display: grid"]');
-                    
+
                     if (grid) {
                         grid.style.display = 'none'; // Masqué par défaut
-                        
+
                         const btn = document.createElement('button');
                         btn.textContent = 'Afficher les screens';
                         btn.style.cssText = 'margin-left: 15px; cursor: pointer; padding: 5px 14px; background: rgba(0, 224, 255, 0.15); color: #00e0ff; font-weight: 600; border-radius: 6px; border: 1px solid rgba(0, 224, 255, 0.3); font-size: 0.85rem; transform: translateY(-2px); transition: all 0.2s ease;';
-                        
+
                         btn.onmouseover = () => {
                             btn.style.background = '#00e0ff';
                             btn.style.color = '#001a2d';
@@ -894,7 +906,7 @@ public function load(ObjectManager $manager): void
                                 btn.style.borderColor = 'rgba(0, 224, 255, 0.3)';
                             }
                         };
-                        
+
                         // Ajouter le bouton à côté du titre H5
                         h5.appendChild(btn);
                     }
