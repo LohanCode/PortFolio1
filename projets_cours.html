@@ -191,7 +191,7 @@
                     </h5>
                     <div class="competence-block"
                         data-images="AP1_1.PNG, AP1_2.PNG, AP1_5.PNG, AP1_11.PNG, AP1_3.PNG, AP1_4.PNG | AP1_6.PNG, AP1_7.PNG, AP1_8.PNG, AP1_9.PNG"
-                        data-tools="phpmyadmin, Looping | VS code">
+                        data-tools="phpmyadmin, Looping.svg | VS code">
                         <div class="competence-title">Gérer le patrimoine informatique</div>
                         <ul class="subskills-list">
                             <li>Mettre en place et vérifier les niveaux d'habilitation associés à un service</li>
@@ -215,10 +215,11 @@
                 </div>
             </div>
 
-            
-        
+
+
             <div style="width: 100%;">
-                <h5 style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                <h5
+                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
                     📸 Preuves
                 </h5>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
@@ -439,26 +440,27 @@
     <div id="lightbox">
         <span class="close-btn">&times;</span>
         <img src="" alt="Zoom">
-    
-            <div style="width: 100%;">
-                <h5 style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
-                    📸 Preuves
-                </h5>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                    <div class="proof-image">
-                        <img src="fichier1.jpg" alt="">
-                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
-                        </p>
-                    </div>
-                    <div class="proof-image">
-                        <img src="fichier2.jpg" alt="">
-                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
-                        </p>
-                    </div>
+
+        <div style="width: 100%;">
+            <h5
+                style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                📸 Preuves
+            </h5>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="proof-image">
+                    <img src="fichier1.jpg" alt="">
+                    <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                    </p>
+                </div>
+                <div class="proof-image">
+                    <img src="fichier2.jpg" alt="">
+                    <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                    </p>
                 </div>
             </div>
-
         </div>
+
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -630,21 +632,21 @@
                     }
                 });
             });
-            
+
             /* ── Masquage et bascule des Preuves ── */
             const preuveHeaders = document.querySelectorAll('h5');
             preuveHeaders.forEach(h5 => {
                 if (h5.textContent.includes('📸 Preuves')) {
                     const container = h5.parentElement;
                     const grid = container.querySelector('div[style*="display: grid"]');
-                    
+
                     if (grid) {
                         grid.style.display = 'none'; // Masqué par défaut
-                        
+
                         const btn = document.createElement('button');
                         btn.textContent = 'Afficher les screens';
                         btn.style.cssText = 'margin-left: 15px; cursor: pointer; padding: 5px 14px; background: rgba(0, 224, 255, 0.15); color: #00e0ff; font-weight: 600; border-radius: 6px; border: 1px solid rgba(0, 224, 255, 0.3); font-size: 0.85rem; transform: translateY(-2px); transition: all 0.2s ease;';
-                        
+
                         btn.onmouseover = () => {
                             btn.style.background = '#00e0ff';
                             btn.style.color = '#001a2d';
@@ -676,7 +678,7 @@
                                 btn.style.borderColor = 'rgba(0, 224, 255, 0.3)';
                             }
                         };
-                        
+
                         // Ajouter le bouton à côté du titre H5
                         h5.appendChild(btn);
                     }
